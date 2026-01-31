@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b4s0l46hqxmjr"]
+
+[ext_resource type="Texture2D" uid="uid://mr8o7kvoylqd" path="res://rooms/level1.jpg" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://3sgqq8ntk3ye" path="res://Player.cs" id="2_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://ckwfjtrjmd3u4" path="res://rooms/player.png" id="2_tlwt5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqk2v"]
+radius = 24.0
+height = 62.0
+
+[sub_resource type="Environment" id="Environment_tlwt5"]
+
+[node name="World" type="Node2D" unique_id=1665390062]
+
+[node name="Level" type="Sprite2D" parent="." unique_id=1066838014]
+scale = Vector2(3, 3)
+texture = ExtResource("1_fj7yv")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=86214825 node_paths=PackedStringArray("_playerBase")]
+position = Vector2(-1, 0)
+motion_mode = 1
+script = ExtResource("2_aqk2v")
+_playerBase = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=45420293]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_aqk2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/CollisionShape2D" unique_id=196871143]
+position = Vector2(2.000002, -1.0000001)
+rotation = -1.5707964
+scale = Vector2(0.28125, 0.171875)
+texture = ExtResource("2_tlwt5")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=49762035]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1463727514]
+environment = SubResource("Environment_tlwt5")

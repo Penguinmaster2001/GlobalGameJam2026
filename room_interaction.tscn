@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bbp0gyt6r2w0y"]
+
+[ext_resource type="Script" uid="uid://dmg3833kesrt5" path="res://RoomInteraction.cs" id="1_m134w"]
+
+[node name="RoomInteraction" type="Control" unique_id=829571007]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m134w")
+
+[node name="Button" type="Button" parent="." unique_id=1276241235]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Interact"

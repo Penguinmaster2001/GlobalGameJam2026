@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cnapcs6t05q8y"]
+
+[ext_resource type="Texture2D" uid="uid://k33tjd20nxoy" path="res://rooms/room1.jpg" id="1_2sogh"]
+[ext_resource type="Script" uid="uid://cdr5csvoscdes" path="res://BaseRoom.cs" id="1_ndbo8"]
+
+[node name="BaseRoom" type="Control" unique_id=698289923]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ndbo8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=339691100]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2sogh")
+expand_mode = 2
