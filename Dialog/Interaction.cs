@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 
@@ -12,7 +13,7 @@ public class Interaction
 {
     public int InteractionId;
     public string Npc;
-    public List<Dialog> Dialogs;
+    public Dictionary<int, Dialog> Dialogs;
 
 
 
@@ -22,6 +23,6 @@ public class Interaction
     {
         InteractionId = interactionId;
         Npc = npc;
-        Dialogs = dialogs;
+        Dialogs = dialogs.ToDictionary(d => d.DialogId);
     }
 }
