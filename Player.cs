@@ -7,15 +7,22 @@ public partial class Player : CharacterBody2D
 {
     [Export]
     private float _moveSpeed = 400.0f;
+
     [Export]
     private float _rotateSpeed = 0.5f;
+
     [Export]
     private float _acceleration = 0.2f;
+
     [Export]
     private float _currentDirection = 0.0f;
 
     [Export]
-    private Node2D _playerBase;
+    private Node2D? _playerBase;
+
+
+
+    private WalkInteraction? _currentInteraction = null;
 
 
 
@@ -32,7 +39,7 @@ public partial class Player : CharacterBody2D
         }
 
         _currentDirection = Mathf.LerpAngle(_currentDirection, inputDir, _rotateSpeed);
-        _playerBase.Rotation = _currentDirection;
+        _playerBase!.Rotation = _currentDirection;
 
         var (s, c) = Mathf.SinCos(_currentDirection);
 
@@ -44,6 +51,24 @@ public partial class Player : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         GetInput();
-        MoveAndSlide();
+        if (MoveAndSlide())
+        {
+            var collision = GetLastSlideCollision().GetCollider();
+        }
+        else
+        {
+            _currentInteraction = null;
+        }
+    }
+
+
+
+    public void OnWalkInteraction(WalkInteraction walkInteraction)
+    {
+        if (walkInteraction != _currentInteraction)
+        {
+            _currentInteraction = walkInteraction;
+            GD.Print(walkInteraction.InteractionName);
+        }
     }
 }
