@@ -1,0 +1,70 @@
+
+{
+    "interaction_id": 0,
+    "npc": "Receptionist",
+    "dialogue": [
+        {
+            "dialog_id": 0,
+            "text": "Welcome to our establishment! How can I assist you today?",
+            "responses": [
+                {
+                    "response_id": 0,
+                    "suspicion_threshold": 100,
+                    "masks": [0, 1, 2],
+                    "text": "I'm looking for information about your services.",
+                    "next_did": 1
+                },
+                {
+                    "response_id": 1,
+                    "suspicion_threshold": 50,
+                    "masks": [0, 1],
+                    "text": "Can you help me with a reservation?",
+                    "next_did": 2
+                },
+                {
+                    "response_id": 2,
+                    "suspicion_threshold": 0,
+                    "masks": [0],
+                    "text": "Just browsing, thanks.",
+                    "next_did": -1
+                }
+            ],
+            "actions": [
+                {
+                    "type": "change_suspicion",
+                    "value": -10
+                },
+                {
+                    "type": "give_mask",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "dialog_id": 1,
+            "text": "We offer a variety of services including dining, lodging, and event hosting. What specifically are you interested in?",
+            "responses": [
+                {
+                    "response_id": 10,
+                    "suspicion_threshold": 0,
+                    "masks": [0, 1, 2],
+                    "text": "Tell me more about your dining options.",
+                    "next_did": 4
+                },
+                {
+                    "response_id": 11,
+                    "suspicion_threshold": 0,
+                    "masks": [0, 1, 2],
+                    "text": "I'm interested in your lodging facilities.",
+                    "next_did": 5
+                }
+            ],
+            "actions": [
+                {
+                    "type": "end_game",
+                    "value": 0
+                }
+            ]
+        }
+    ]
+}
