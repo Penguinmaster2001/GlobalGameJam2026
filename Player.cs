@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.Linq;
 using Godot;
 
 
@@ -80,5 +81,14 @@ public partial class Player : CharacterBody2D
                 GD.Print(interaction.Dialogs[0].Text);
             }
         }
+    }
+
+
+
+    public void GiveMask(int level)
+    {
+        if (PlayerMasks.Any(m => m.Level == level)) return;
+
+        PlayerMasks.Add(Mask.Masks[Mask.MaskNames[level]]);
     }
 }

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Interactions.UI;
@@ -14,7 +15,7 @@ public class InteractionDirector
     private readonly IDialogUi _dialogUi;
     private readonly NpcTextureDatabase _npcTextureDatabase;
     private readonly Player _player;
-
+    private readonly Dictionary<DialogActionTypes, Action<int>> _dialogActionHandlers;
 
 
     public InteractionDirector(IDialogUi dialogUi, NpcTextureDatabase npcTextureDatabase, Player player)
@@ -22,6 +23,11 @@ public class InteractionDirector
         _dialogUi = dialogUi;
         _npcTextureDatabase = npcTextureDatabase;
         _player = player;
+
+        _dialogActionHandlers = new() {
+            {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel -= i },
+            {DialogActionTypes.GiveMask, i => _player.GiveMask(i) },
+        };
     }
 
 
@@ -29,6 +35,19 @@ public class InteractionDirector
     public void StartInteraction(Interaction interaction)
     {
         var info = AssembleDialogInfo(interaction, 0);
+        _dialogUi.Show(info);
+    }
+
+
+
+    private void SendDialog(Interaction interaction, int dialogId)
+    {
+        var dialog = interaction.Dialogs[dialogId];
+        foreach (var action in dialog.Actions)
+        {
+            _dialogActionHandlers[action.ActionType](action.Value);
+        }
+        var info = AssembleDialogInfo(interaction, dialogId);
         _dialogUi.Show(info);
     }
 

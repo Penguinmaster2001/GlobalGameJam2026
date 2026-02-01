@@ -24,4 +24,11 @@ public class Mask
     {
         {"none", new Mask(0, "res://Resources/Textures/Masks/None.png")}
     });
+
+
+
+    public static readonly ReadOnlyDictionary<int, string> MaskNames = new(new Dictionary<int, string>()
+    {
+        {0, "none"}
+    });
 }
