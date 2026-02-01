@@ -39,6 +39,7 @@ func _input(event):
 
 	
 func parse_line(line: String):
+	print(line)
 	var line_info = line.split(":")
 	assert(len(line_info) >= 2)
 	return {
