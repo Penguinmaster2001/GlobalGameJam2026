@@ -10,9 +10,12 @@ public partial class Global : Node2D
 
 
 
-
     [Export]
     public Player Player { get; private set; }
+
+
+
+    public int SuspicionLevel;
 
 
 

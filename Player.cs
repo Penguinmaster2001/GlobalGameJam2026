@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using Godot;
 
 
@@ -23,6 +24,10 @@ public partial class Player : CharacterBody2D
 
 
     private WalkInteraction? _currentInteraction = null;
+
+    public Mask CurrentMask { get; set; } = Mask.Masks["none"];
+    public List<Mask> PlayerMasks = [Mask.Masks["none"]];
+    public int SuspicionLevel = 0;
 
 
 
