@@ -12,6 +12,9 @@ public enum DialogActionTypes
     None,
     ChangeSuspicion,
     GiveMask,
+    SetObjective,
+    GiveItem,
+    TriggerEvent,
     EndGame,
 }
 

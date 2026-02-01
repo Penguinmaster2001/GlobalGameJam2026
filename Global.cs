@@ -56,7 +56,7 @@ public partial class Global : Node2D
 
         Player = new(PlayerBody);
 
-        var interactions = DialogManager.LoadDialogs("res://Resources/Dialog/");
+        var interactions = DialogManager.LoadDialogs("res://Resources/Story/story.json");
         Interactions = new(interactions);
 
         var textures = new Dictionary<string, Texture2D>();

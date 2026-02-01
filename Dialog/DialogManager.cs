@@ -26,12 +26,21 @@ public static class DialogManager
     {
         var interactions = new List<Interaction>();
 
-        foreach (var file in DirAccess.Open(path).GetFiles())
+        // foreach (var file in DirAccess.Open(path).GetFiles())
+        // {
+        //     var text = Godot.FileAccess.GetFileAsString(Path.Combine(path, file));
+        //     GD.Print(Path.Combine(path, file));
+        //     GD.Print(text);
+        //     var interaction = JsonSerializer.Deserialize<Interaction.InteractionData>(text, _interactionSerializerOptions);
+        //     if (interaction is Interaction.InteractionData validInteraction)
+        //     {
+        //         interactions.Add(validInteraction.IntoInteraction());
+        //     }
+        // }
+
+        var data = JsonSerializer.Deserialize<List<Interaction.InteractionData>>(Godot.FileAccess.GetFileAsString(path), _interactionSerializerOptions)!;
+        foreach (var interaction in data)
         {
-            var text = Godot.FileAccess.GetFileAsString(Path.Combine(path, file));
-            GD.Print(Path.Combine(path, file));
-            GD.Print(text);
-            var interaction = JsonSerializer.Deserialize<Interaction.InteractionData>(text, _interactionSerializerOptions);
             if (interaction is Interaction.InteractionData validInteraction)
             {
                 interactions.Add(validInteraction.IntoInteraction());
