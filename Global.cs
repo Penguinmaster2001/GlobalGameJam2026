@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using Godot;
 using Interactions;
 using Interactions.UI;
+using Objectives;
 
 
 
@@ -35,6 +36,11 @@ public partial class Global : Node2D
 
     [Export]
     public required ProgressBar SusUi { get; set; }
+
+
+
+    [Export]
+    public required ObjectiveManager ObjectiveManager { get; set; }
 
 
 

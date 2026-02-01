@@ -29,6 +29,7 @@ public class InteractionDirector
             {DialogActionTypes.None, i => { } },
             {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel += int.Parse(i) },
             {DialogActionTypes.GiveMask, i => {_player.GiveMask(int.Parse(i)); Global.Instance.MaskUi.EnableMask(int.Parse(i)); } },
+            {DialogActionTypes.SetObjective, i => Global.Instance.ObjectiveManager.CurrentObjective = i },
         };
     }
 

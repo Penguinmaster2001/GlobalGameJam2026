@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ccn5wwcnnkcpv" path="res://Resources/Textures/Tiles/floor.png" id="4_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://b57uy8w314ayi" path="res://Resources/Textures/Tiles/walls.png" id="5_wse8f"]
 [ext_resource type="PackedScene" uid="uid://odf1fej4j4ci" path="res://Resources/healthbar/healthbar.tscn" id="6_2o6r5"]
+[ext_resource type="Script" uid="uid://dy07rp5c4e40h" path="res://Objectives/ObjectiveManager.cs" id="7_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://ca8a1q7ui8f0r" path="res://top_down_character.tscn" id="10_ic0uy"]
 [ext_resource type="Shader" uid="uid://cni0qfd2nqj7x" path="res://camera.gdshader" id="10_wse8f"]
 [ext_resource type="Texture2D" uid="uid://qobuag68o84g" path="res://Resources/Textures/Tiles/rugs.png" id="13_70uel"]
@@ -349,12 +350,13 @@ sources/2 = SubResource("TileSetAtlasSource_k3n1d")
 
 [sub_resource type="Environment" id="Environment_tlwt5"]
 
-[node name="World" type="Node2D" unique_id=1665390062 node_paths=PackedStringArray("PlayerBody", "MaskUi", "DialogUi", "SusUi")]
+[node name="World" type="Node2D" unique_id=1665390062 node_paths=PackedStringArray("PlayerBody", "MaskUi", "DialogUi", "SusUi", "ObjectiveManager")]
 script = ExtResource("1_dwbse")
 PlayerBody = NodePath("PlayerCharacter")
 MaskUi = NodePath("CanvasLayer/MaskUi")
 DialogUi = NodePath("CanvasLayer/DialogUiWrapper")
 SusUi = NodePath("CanvasLayer/Healthbar")
+ObjectiveManager = NodePath("CanvasLayer/ObjectiveManager")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=376430899]
 
@@ -384,6 +386,31 @@ Ui = NodePath("DialogUi")
 [node name="MaskUi" parent="CanvasLayer" unique_id=539509994 instance=ExtResource("2_ic0uy")]
 
 [node name="Healthbar" parent="CanvasLayer" unique_id=789571972 instance=ExtResource("6_2o6r5")]
+
+[node name="ObjectiveManager" type="Control" parent="CanvasLayer" unique_id=1201130497 node_paths=PackedStringArray("ObjectiveLabel")]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("7_hiqwa")
+ObjectiveLabel = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ObjectiveManager" unique_id=741010617]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -242.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+fit_content = true
+scroll_active = false
 
 [node name="Level" type="Sprite2D" parent="." unique_id=1066838014]
 scale = Vector2(2, 2)
