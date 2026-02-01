@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bfhs1r85ao1va"]
+
+[ext_resource type="Script" uid="uid://dmv1yp4mja387" path="res://character_sprite.gd" id="1_7ig0a"]
+[ext_resource type="Texture2D" uid="uid://b5twm5dmvo0ob" path="res://Resources/Textures/Characters/receptionist.png" id="1_oolk3"]
+
+[node name="CharacterSprite" type="Node2D" unique_id=955065750 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_7ig0a")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1393368045]
+position = Vector2(227, 451)
+scale = Vector2(0.22210693, 0.199646)
+texture = ExtResource("1_oolk3")
