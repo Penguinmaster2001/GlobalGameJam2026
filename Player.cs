@@ -22,6 +22,13 @@ public partial class Player : CharacterBody2D
     [Export]
     private Node2D? _playerBase;
 
+    [Export]
+    private AnimationPlayer? _animation;
+
+
+
+    private string[] _animationDirections = ["right", "down", "left", "up"];
+
 
 
     private WalkInteraction? _currentInteraction = null;
@@ -35,17 +42,22 @@ public partial class Player : CharacterBody2D
     public void GetInput()
     {
         var speed = 0.0f;
+        var animationState = "stand";
         var inputDir = _currentDirection;
         var moveInput = Input.GetVector("left", "right", "up", "down");
 
         if (moveInput.LengthSquared() > 0.01f)
         {
+            animationState = "walk";
             inputDir = Mathf.Atan2(moveInput.Y, moveInput.X);
             speed = _moveSpeed;
         }
 
-        _currentDirection = Mathf.LerpAngle(_currentDirection, inputDir, _rotateSpeed);
-        _playerBase!.Rotation = _currentDirection;
+        _currentDirection = Mathf.PosMod(Mathf.LerpAngle(_currentDirection, inputDir, _rotateSpeed), Mathf.Tau);
+        // _playerBase!.Rotation = _currentDirection;
+        var animationDir = _animationDirections[Mathf.FloorToInt(Mathf.PosMod(0.5 + (4.0 * _currentDirection / Mathf.Tau), 4.0))];
+        GD.Print($"{animationDir}\t{_currentDirection}\t{4.0 * _currentDirection / Mathf.Tau}");
+        _animation!.Play($"{animationState}_{animationDir}");
 
         var (s, c) = Mathf.SinCos(_currentDirection);
 
