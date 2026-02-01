@@ -25,16 +25,20 @@ public partial class Player : CharacterBody2D
     [Export]
     private AnimationPlayer? _animation;
 
+    [Export]
+    private Sprite2D? _maskSprite;
+
 
 
     private string[] _animationDirections = ["right", "down", "left", "up"];
+    private int[] _maskDirections = [1, 0, 3, 2];
 
 
 
     private WalkInteraction? _currentInteraction = null;
 
     public Mask CurrentMask { get; set; } = Mask.Masks["none"];
-    public List<Mask> PlayerMasks = [Mask.Masks["none"], Mask.Masks["low"], Mask.Masks["high"]];
+    public List<Mask> PlayerMasks = [Mask.Masks["none"], Mask.Masks["low"], Mask.Masks["normal"], Mask.Masks["high"]];
     public int SuspicionLevel = 0;
 
 
@@ -54,10 +58,11 @@ public partial class Player : CharacterBody2D
         }
 
         _currentDirection = Mathf.PosMod(Mathf.LerpAngle(_currentDirection, inputDir, _rotateSpeed), Mathf.Tau);
-        // _playerBase!.Rotation = _currentDirection;
-        var animationDir = _animationDirections[Mathf.FloorToInt(Mathf.PosMod(0.5 + (4.0 * _currentDirection / Mathf.Tau), 4.0))];
-        GD.Print($"{animationDir}\t{_currentDirection}\t{4.0 * _currentDirection / Mathf.Tau}");
+        var displayDir = Mathf.FloorToInt(Mathf.PosMod(0.5 + (4.0 * _currentDirection / Mathf.Tau), 4.0));
+        var animationDir = _animationDirections[displayDir];
+        var maskDir = _maskDirections[displayDir];
         _animation!.Play($"{animationState}_{animationDir}");
+        _maskSprite!.FrameCoords = new(maskDir, CurrentMask.Level);
 
         var (s, c) = Mathf.SinCos(_currentDirection);
 
