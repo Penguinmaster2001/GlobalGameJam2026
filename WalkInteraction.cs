@@ -22,7 +22,7 @@ public partial class WalkInteraction : Area2D
 
     private void OnBodyEntered(Node2D body)
     {
-        if (body == Global.Instance.Player)
+        if (body == Global.Instance.PlayerBody)
         {
             Global.Instance.Player.OnWalkInteraction(this);
         }

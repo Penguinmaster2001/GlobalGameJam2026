@@ -11,7 +11,11 @@ public partial class Global : Node2D
 
 
     [Export]
-    public required Player Player { get; set; }
+    public required TopDownCharacter PlayerBody { get; set; }
+
+
+
+    public Player Player { get; set; }
 
 
 
@@ -31,6 +35,8 @@ public partial class Global : Node2D
     public override void _Ready()
     {
         Instance = this;
+
+        Player = new(PlayerBody);
 
         var interactions = DialogManager.LoadDialogs("res://Resources/Dialog/");
         Interactions = new(interactions);

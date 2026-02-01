@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://ca8a1q7ui8f0r"]
+
+[ext_resource type="Script" uid="uid://bs1g1trpcdcno" path="res://TopDownCharacter.cs" id="1_bixe5"]
+[ext_resource type="Texture2D" uid="uid://g2tvhqh15af8" path="res://Resources/Textures/Player/player_animation.png" id="2_escmf"]
+[ext_resource type="Texture2D" uid="uid://b1wa76g75fon2" path="res://Resources/Textures/Masks/mask_rotations.png" id="3_vu0rr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ycwe"]
+radius = 48.0
+height = 128.0
+
+[sub_resource type="Animation" id="Animation_k3n1d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_udxuc"]
+resource_name = "stand_down"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_2u3nc"]
+resource_name = "stand_left"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 9]
+}
+
+[sub_resource type="Animation" id="Animation_ikiii"]
+resource_name = "stand_right"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 6]
+}
+
+[sub_resource type="Animation" id="Animation_cbp6q"]
+resource_name = "stand_up"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 3]
+}
+
+[sub_resource type="Animation" id="Animation_2o6r5"]
+resource_name = "walk_down"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_ic0uy"]
+resource_name = "walk_left"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_hiqwa"]
+resource_name = "walk_right"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_70uel"]
+resource_name = "walk_up"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_al0vr"]
+_data = {
+&"RESET": SubResource("Animation_k3n1d"),
+&"stand_down": SubResource("Animation_udxuc"),
+&"stand_left": SubResource("Animation_2u3nc"),
+&"stand_right": SubResource("Animation_ikiii"),
+&"stand_up": SubResource("Animation_cbp6q"),
+&"walk_down": SubResource("Animation_2o6r5"),
+&"walk_left": SubResource("Animation_ic0uy"),
+&"walk_right": SubResource("Animation_hiqwa"),
+&"walk_up": SubResource("Animation_70uel")
+}
+
+[node name="TopDownCharacter" type="CharacterBody2D" unique_id=1910870109 node_paths=PackedStringArray("_playerBase", "_animation", "_maskSprite")]
+motion_mode = 1
+script = ExtResource("1_bixe5")
+_moveSpeed = 300.0
+_rotateSpeed = 0.3
+_playerBase = NodePath("CollisionShape2D/WalkSprite")
+_animation = NodePath("CollisionShape2D/WalkSprite/AnimationPlayer")
+_maskSprite = NodePath("CollisionShape2D/WalkSprite/MaskSprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1403078659]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1ycwe")
+
+[node name="WalkSprite" type="Sprite2D" parent="CollisionShape2D" unique_id=797700784]
+position = Vector2(-41.16, 0)
+rotation = -1.5707964
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_escmf")
+hframes = 6
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape2D/WalkSprite" unique_id=295890565]
+libraries/ = SubResource("AnimationLibrary_al0vr")
+speed_scale = 0.1
+
+[node name="MaskSprite" type="Sprite2D" parent="CollisionShape2D/WalkSprite" unique_id=1305234921]
+position = Vector2(0, -195)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_vu0rr")
+hframes = 4
+vframes = 4

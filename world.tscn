@@ -2,16 +2,14 @@
 
 [ext_resource type="Script" uid="uid://ewuu1ut3mu55" path="res://Global.cs" id="1_dwbse"]
 [ext_resource type="Texture2D" uid="uid://mr8o7kvoylqd" path="res://rooms/level1.jpg" id="1_fj7yv"]
-[ext_resource type="Script" uid="uid://3sgqq8ntk3ye" path="res://Player.cs" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://iiuut14ccgj0" path="res://mask_ui.tscn" id="2_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://eah0el3b2cab" path="res://walk_interaction.tscn" id="3_036b0"]
 [ext_resource type="Texture2D" uid="uid://bov5y1axv1e8j" path="res://Resources/Textures/Tiles/items.png" id="3_ioo17"]
 [ext_resource type="Texture2D" uid="uid://bxjh0il2n4kgj" path="res://rooms/gradient.jpg" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://ccn5wwcnnkcpv" path="res://Resources/Textures/Tiles/floor.png" id="4_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://b57uy8w314ayi" path="res://Resources/Textures/Tiles/walls.png" id="5_wse8f"]
+[ext_resource type="PackedScene" uid="uid://ca8a1q7ui8f0r" path="res://top_down_character.tscn" id="10_ic0uy"]
 [ext_resource type="Shader" uid="uid://cni0qfd2nqj7x" path="res://camera.gdshader" id="10_wse8f"]
-[ext_resource type="Texture2D" uid="uid://g2tvhqh15af8" path="res://Resources/Textures/Player/player_animation.png" id="11_ic0uy"]
-[ext_resource type="Texture2D" uid="uid://b1wa76g75fon2" path="res://Resources/Textures/Masks/mask_rotations.png" id="12_k3n1d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ic0uy"]
 shader = ExtResource("10_wse8f")
@@ -345,179 +343,11 @@ sources/1 = SubResource("TileSetAtlasSource_gbfbk")
 sources/0 = SubResource("TileSetAtlasSource_ic0uy")
 sources/2 = SubResource("TileSetAtlasSource_k3n1d")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqk2v"]
-radius = 48.0
-height = 128.0
-
-[sub_resource type="Animation" id="Animation_k3n1d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_udxuc"]
-resource_name = "stand_down"
-length = 0.06
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 0]
-}
-
-[sub_resource type="Animation" id="Animation_2u3nc"]
-resource_name = "stand_left"
-length = 0.06
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [9, 9]
-}
-
-[sub_resource type="Animation" id="Animation_ikiii"]
-resource_name = "stand_right"
-length = 0.06
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [6, 6]
-}
-
-[sub_resource type="Animation" id="Animation_cbp6q"]
-resource_name = "stand_up"
-length = 0.06
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [3, 3]
-}
-
-[sub_resource type="Animation" id="Animation_2o6r5"]
-resource_name = "walk_down"
-length = 0.06
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 2]
-}
-
-[sub_resource type="Animation" id="Animation_ic0uy"]
-resource_name = "walk_left"
-length = 0.06
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [10, 11]
-}
-
-[sub_resource type="Animation" id="Animation_hiqwa"]
-resource_name = "walk_right"
-length = 0.06
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [7, 8]
-}
-
-[sub_resource type="Animation" id="Animation_70uel"]
-resource_name = "walk_up"
-length = 0.06
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [4, 5]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hiqwa"]
-_data = {
-&"RESET": SubResource("Animation_k3n1d"),
-&"stand_down": SubResource("Animation_udxuc"),
-&"stand_left": SubResource("Animation_2u3nc"),
-&"stand_right": SubResource("Animation_ikiii"),
-&"stand_up": SubResource("Animation_cbp6q"),
-&"walk_down": SubResource("Animation_2o6r5"),
-&"walk_left": SubResource("Animation_ic0uy"),
-&"walk_right": SubResource("Animation_hiqwa"),
-&"walk_up": SubResource("Animation_70uel")
-}
-
 [sub_resource type="Environment" id="Environment_tlwt5"]
 
-[node name="World" type="Node2D" unique_id=1665390062 node_paths=PackedStringArray("Player", "MaskUi")]
+[node name="World" type="Node2D" unique_id=1665390062 node_paths=PackedStringArray("PlayerBody", "MaskUi")]
 script = ExtResource("1_dwbse")
-Player = NodePath("Player")
+PlayerBody = NodePath("PlayerCharacter")
 MaskUi = NodePath("CanvasLayer/MaskUi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=376430899]
@@ -559,40 +389,11 @@ position = Vector2(276, 161.5)
 InteractionName = "Guy"
 InteractionId = 1
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=86214825 node_paths=PackedStringArray("_playerBase", "_animation", "_maskSprite")]
-position = Vector2(-312, 1016)
-motion_mode = 1
-script = ExtResource("2_aqk2v")
-_rotateSpeed = 0.3
-_acceleration = 0.5
-_playerBase = NodePath("CollisionShape2D")
-_animation = NodePath("CollisionShape2D/WalkSprite/AnimationPlayer")
-_maskSprite = NodePath("CollisionShape2D/WalkSprite/MaskSprite")
+[node name="PlayerCharacter" parent="." unique_id=1910870109 instance=ExtResource("10_ic0uy")]
+position = Vector2(-277, 1011)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=45420293]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_aqk2v")
-
-[node name="WalkSprite" type="Sprite2D" parent="Player/CollisionShape2D" unique_id=196871143]
-position = Vector2(-41.16, 0)
-rotation = -1.5707964
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("11_ic0uy")
-hframes = 6
-vframes = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/CollisionShape2D/WalkSprite" unique_id=1457433909]
-libraries/ = SubResource("AnimationLibrary_hiqwa")
-speed_scale = 0.1
-
-[node name="MaskSprite" type="Sprite2D" parent="Player/CollisionShape2D/WalkSprite" unique_id=901197781]
-position = Vector2(0, -195)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("12_k3n1d")
-hframes = 4
-vframes = 4
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=49762035]
+[node name="Camera2D2" type="Camera2D" parent="PlayerCharacter" unique_id=49762035]
+position = Vector2(0, -102.00003)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1463727514]
 environment = SubResource("Environment_tlwt5")
