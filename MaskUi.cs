@@ -37,8 +37,6 @@ public partial class MaskUi : Control
             maskButton.Toggled += t => ActivateMask(t, mask.Level);
             _maskButtons.Add(mask.Level, maskButton);
             _maskContainer.AddChild(maskButton);
-
-            EnableMask(mask.Level);
         }
         EnableMask(0);
         ActivateMask(false, -1);
@@ -68,6 +66,7 @@ public partial class MaskUi : Control
 
     public void EnableMask(int level)
     {
+        GD.Print($"Enabling mask {level}");
         if (_maskButtons[level].Disabled)
         {
             _maskButtons[level].Disabled = false;

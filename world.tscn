@@ -380,7 +380,7 @@ tile_set = SubResource("TileSet_ioo17")
 [node name="Interactions" type="Node2D" parent="Level" unique_id=1578441858]
 
 [node name="WalkInteraction" parent="Level/Interactions" unique_id=1971886542 instance=ExtResource("3_036b0")]
-position = Vector2(-44, 330.5)
+position = Vector2(-62, 330.5)
 InteractionName = "Receptionist"
 InteractionId = 0
 

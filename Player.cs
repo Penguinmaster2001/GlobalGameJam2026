@@ -10,7 +10,7 @@ public class Player : IInput
     private WalkInteraction? _currentInteraction = null;
 
     public Mask CurrentMask { get; set; } = Mask.Masks["none"];
-    public List<Mask> PlayerMasks = [Mask.Masks["none"], Mask.Masks["low"], Mask.Masks["normal"], Mask.Masks["high"]];
+    public List<Mask> PlayerMasks = [Mask.Masks["none"]];
     public int SuspicionLevel = 0;
 
     private readonly TopDownCharacter _playerCharacter;
@@ -38,7 +38,7 @@ public class Player : IInput
 
             if (Global.Instance.Interactions.Query(walkInteraction.InteractionId, out var interaction))
             {
-                GD.Print(interaction.Dialogs[0].Text);
+                Global.Instance.Director.StartInteraction(interaction);
             }
         }
     }

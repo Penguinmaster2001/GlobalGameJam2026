@@ -31,12 +31,12 @@
             ],
             "actions": [
                 {
-                    "type": "change_suspicion",
+                    "action_type": "ChangeSuspicion",
                     "value": -10
                 },
                 {
-                    "type": "give_mask",
-                    "value": 0
+                    "action_type": "GiveMask",
+                    "value": 1
                 }
             ]
         },
@@ -61,7 +61,7 @@
             ],
             "actions": [
                 {
-                    "type": "end_game",
+                    "action_type": "EndGame",
                     "value": 0
                 }
             ]

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Godot;
 using Interactions.UI;
 
 
@@ -34,8 +35,7 @@ public class InteractionDirector
 
     public void StartInteraction(Interaction interaction)
     {
-        var info = AssembleDialogInfo(interaction, 0);
-        _dialogUi.Show(info);
+        SendDialog(interaction, 0);
     }
 
 
@@ -45,6 +45,7 @@ public class InteractionDirector
         var dialog = interaction.Dialogs[dialogId];
         foreach (var action in dialog.Actions)
         {
+            GD.Print($"{action.ActionType}, {action.Value}");
             _dialogActionHandlers[action.ActionType](action.Value);
         }
         var info = AssembleDialogInfo(interaction, dialogId);
