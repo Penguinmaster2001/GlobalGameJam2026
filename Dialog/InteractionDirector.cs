@@ -27,7 +27,7 @@ public class InteractionDirector
 
         _dialogActionHandlers = new() {
             {DialogActionTypes.None, i => { } },
-            {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel -= i },
+            {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel += i },
             {DialogActionTypes.GiveMask, i => {_player.GiveMask(i); Global.Instance.MaskUi.EnableMask(i); } },
         };
     }

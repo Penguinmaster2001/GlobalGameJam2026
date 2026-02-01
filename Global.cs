@@ -33,6 +33,11 @@ public partial class Global : Node2D
 
 
 
+    [Export]
+    public required ProgressBar SusUi { get; set; }
+
+
+
     public int SuspicionLevel;
 
 

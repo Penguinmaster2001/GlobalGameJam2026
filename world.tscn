@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cjuvre7jyfc8b" path="res://Dialog/UI/DialogUiWrapper.cs" id="4_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://ccn5wwcnnkcpv" path="res://Resources/Textures/Tiles/floor.png" id="4_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://b57uy8w314ayi" path="res://Resources/Textures/Tiles/walls.png" id="5_wse8f"]
+[ext_resource type="PackedScene" uid="uid://odf1fej4j4ci" path="res://Resources/healthbar/healthbar.tscn" id="6_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://ca8a1q7ui8f0r" path="res://top_down_character.tscn" id="10_ic0uy"]
 [ext_resource type="Shader" uid="uid://cni0qfd2nqj7x" path="res://camera.gdshader" id="10_wse8f"]
 
@@ -347,11 +348,12 @@ sources/2 = SubResource("TileSetAtlasSource_k3n1d")
 
 [sub_resource type="Environment" id="Environment_tlwt5"]
 
-[node name="World" type="Node2D" unique_id=1665390062 node_paths=PackedStringArray("PlayerBody", "MaskUi", "DialogUi")]
+[node name="World" type="Node2D" unique_id=1665390062 node_paths=PackedStringArray("PlayerBody", "MaskUi", "DialogUi", "SusUi")]
 script = ExtResource("1_dwbse")
 PlayerBody = NodePath("PlayerCharacter")
 MaskUi = NodePath("CanvasLayer/MaskUi")
 DialogUi = NodePath("CanvasLayer/DialogUiWrapper")
+SusUi = NodePath("CanvasLayer/Healthbar")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=376430899]
 
@@ -380,6 +382,8 @@ Ui = NodePath("DialogUi")
 
 [node name="MaskUi" parent="CanvasLayer" unique_id=539509994 instance=ExtResource("2_ic0uy")]
 
+[node name="Healthbar" parent="CanvasLayer" unique_id=789571972 instance=ExtResource("6_2o6r5")]
+
 [node name="Level" type="Sprite2D" parent="." unique_id=1066838014]
 scale = Vector2(2, 2)
 texture = ExtResource("1_fj7yv")
@@ -407,8 +411,8 @@ InteractionId = 1
 [node name="WalkInteraction3" parent="Level/Interactions" unique_id=1425110247 instance=ExtResource("3_036b0")]
 position = Vector2(-138, 121.5)
 scale = Vector2(3.95664, 4.1980467)
-ActionTypes = Array[int]([2])
-ActionValues = Array[int]([2])
+ActionTypes = Array[int]([2, 1])
+ActionValues = Array[int]([2, 2])
 
 [node name="PlayerCharacter" parent="." unique_id=1910870109 instance=ExtResource("10_ic0uy")]
 position = Vector2(-277, 1011)

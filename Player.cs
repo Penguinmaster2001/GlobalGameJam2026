@@ -11,7 +11,15 @@ public class Player : IInput
 
     public Mask CurrentMask { get; set; } = Mask.Masks["none"];
     public List<Mask> PlayerMasks = [Mask.Masks["none"]];
-    public int SuspicionLevel = 0;
+    private int _suspicionLevel = 0;
+    public int SuspicionLevel
+    {
+        get => _suspicionLevel; set
+        {
+            _suspicionLevel = value;
+            Global.Instance.SusUi.Set("health", value);
+        }
+    }
 
     private readonly TopDownCharacter _playerCharacter;
 
