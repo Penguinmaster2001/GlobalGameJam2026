@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b68ofjq4tpe83"]
+
+[ext_resource type="Script" uid="uid://d4mmjrdb8stfy" path="res://title_screen.gd" id="1_ak2if"]
+[ext_resource type="Texture2D" uid="uid://cmqsrs5wajpvs" path="res://Resources/TitleScene/Title_Screen.png" id="1_v6p8y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05l2w"]
+
+[node name="TitleScreen" type="Node2D" unique_id=1473332471]
+script = ExtResource("1_ak2if")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=227363012]
+offset_right = 1158.0
+offset_bottom = 652.0
+texture = ExtResource("1_v6p8y")
+expand_mode = 1
+
+[node name="Button_manager" type="Control" parent="." unique_id=491779592]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="Button_manager" unique_id=620122343]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.825
+anchor_top = 4.175
+anchor_right = 5.846
+anchor_bottom = 5.2500005
+offset_right = 6.1599884
+offset_bottom = -1.5258789e-05
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_05l2w")
+flat = true
+
+[node name="Exit" type="Button" parent="Button_manager" unique_id=397962202]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.8750002
+anchor_top = 5.3500004
+anchor_right = 6.05
+anchor_bottom = 6.2000003
+offset_top = -1.5258789e-05
+offset_bottom = -1.5258789e-05
+mouse_default_cursor_shape = 2
+flat = true
+
+[connection signal="pressed" from="Button_manager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button_manager/Exit" to="." method="_on_exit_pressed"]
