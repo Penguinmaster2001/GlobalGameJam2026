@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d4iis4p3gd18d"]
 
-[ext_resource type="Script" uid="uid://csuxdfqsuffr7" path="res://dialogue_scene.gd" id="1_aay13"]
+[ext_resource type="Script" uid="uid://csuxdfqsuffr7" path="res://DialogUi/dialogue_scene.gd" id="1_aay13"]
 [ext_resource type="PackedScene" path="res://Character.tscn" id="1_efucv"]
-[ext_resource type="PackedScene" uid="uid://drm3jv2qtud5h" path="res://dialogue_ui.tscn" id="2_aay13"]
+[ext_resource type="PackedScene" uid="uid://drm3jv2qtud5h" path="res://DialogUi/dialogue_ui.tscn" id="2_aay13"]
 
 [node name="DialogUi" type="Node2D" unique_id=1037324033 node_paths=PackedStringArray("character_sprite", "dialog_ui")]
 script = ExtResource("1_aay13")

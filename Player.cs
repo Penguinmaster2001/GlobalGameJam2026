@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
@@ -82,5 +83,16 @@ public class Player : IInput
         CurrentMask = PlayerMasks.Find(m => m.Level == level) ?? Mask.Masks["none"];
         _playerCharacter.CurrentMask = CurrentMask;
         GD.Print($"level: {level}, New mask: {CurrentMask.Level}");
+    }
+
+
+
+
+    internal void OnWalkLeave(WalkInteraction walkInteraction)
+    {
+        if (walkInteraction == _currentInteraction)
+        {
+            _currentInteraction = null;
+        }
     }
 }

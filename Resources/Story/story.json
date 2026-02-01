@@ -4,7 +4,7 @@
   "dialogue": [
 	{
 	  "dialog_id": 0,
-	  "text": ["Oh hello dear, you’re quite late.", ],
+	  "text": ["Oh hello dear, you’re quite late."],
 	  "responses": [
 		{
 		  "response_id": 0,
@@ -32,7 +32,7 @@
 	},
 	{
 	  "dialog_id": 1,
-	  "text": "Oh, this? We made them with the kids as a goodbye gift. Such talent, truly!",
+	  "text": ["Oh, this? We made them with the kids as a goodbye gift. Such talent, truly!"],
 	  "responses": [
 		{
 		  "response_id": 3,
