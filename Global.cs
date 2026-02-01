@@ -1,5 +1,4 @@
 
-using System.Diagnostics.CodeAnalysis;
 using Godot;
 using Interactions;
 
@@ -13,6 +12,11 @@ public partial class Global : Node2D
 
     [Export]
     public required Player Player { get; set; }
+
+
+
+    [Export]
+    public required MaskUi MaskUi { get; set; }
 
 
 
@@ -30,5 +34,7 @@ public partial class Global : Node2D
 
         var interactions = DialogManager.LoadDialogs("res://Resources/Dialog/");
         Interactions = new(interactions);
+
+        MaskUi.AddMasks(Mask.Masks.Values);
     }
 }

@@ -27,7 +27,7 @@ public partial class Player : CharacterBody2D
     private WalkInteraction? _currentInteraction = null;
 
     public Mask CurrentMask { get; set; } = Mask.Masks["none"];
-    public List<Mask> PlayerMasks = [Mask.Masks["none"]];
+    public List<Mask> PlayerMasks = [Mask.Masks["none"], Mask.Masks["low"], Mask.Masks["high"]];
     public int SuspicionLevel = 0;
 
 
@@ -98,5 +98,6 @@ public partial class Player : CharacterBody2D
     public void SetCurrentMask(int level)
     {
         CurrentMask = PlayerMasks.Find(m => m.Level == level) ?? Mask.Masks["none"];
+        GD.Print($"level: {level}, New mask: {CurrentMask.Level}");
     }
 }
