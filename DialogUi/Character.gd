@@ -11,23 +11,7 @@ enum Name {
 	Son
 }
 
-const CHARACTER_DETAILS : Dictionary = {
-	Name.Receptionist: {
-		"name": "Receptionist", 
-		"sprite": preload ("res://Resources/Textures/Characters/receptionist.png"),
-		"textSound": "normal"
-	}, 
-	Name.Player: {
-		"name": "Player", 
-		"sprite": null,
-		"textSound": null
-	}, 
-	Name.Son: {
-		"name": "Son",
-		"sprite": preload("res://Resources/Textures/Characters/unnamed.png"),
-		"textSound": "normal"
-	}
-}
+static var CHARACTER_DETAILS : Dictionary = {}
 
 static func get_enum_from_string(string_value: String) -> int:
 	if Name.has(string_value):

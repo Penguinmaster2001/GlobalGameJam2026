@@ -24,7 +24,7 @@ public partial class DialogUiWrapper : Control, IDialogUi
 
     public void Show(DialogInfo dialog)
     {
-        Ui.Call("start_dialogue", Variant.From(dialog.Text));
+        Ui.Call("start_dialogue", Variant.From(dialog.Text), dialog.CharacterTextures, Variant.From(dialog.Responses));
     }
 
 

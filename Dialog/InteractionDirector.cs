@@ -72,9 +72,9 @@ public class InteractionDirector
 
 
 
-    private List<Response> FilterResponses(IEnumerable<Response> responses)
+    private List<string[]> FilterResponses(IEnumerable<Response> responses)
         => [.. responses.Where(r => r.RequiredMasks.Contains(_player.CurrentMask.Level)
-            && r.SuspicionThreshold >= _player.SuspicionLevel).Select(r => { r.Text = AppendCharacterName(r.Text, "player");  return r;})];
+            && r.SuspicionThreshold >= _player.SuspicionLevel).Select(r => AppendCharacterName(r.Text, "player"))];
 
 
 
