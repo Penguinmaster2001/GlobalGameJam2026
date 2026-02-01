@@ -26,7 +26,7 @@ public class Mask
 
     public static readonly ReadOnlyDictionary<string, Mask> Masks = new(new Dictionary<string, Mask>()
     {
-        {"none", new Mask(0, "res://Resources/Textures/Masks/none.png")},
+        {"none", new Mask(0, "res://Resources/Textures/Masks/mask_0.png")},
         {"low", new Mask(1, "res://Resources/Textures/Masks/mask_1.png")},
         {"normal", new Mask(2, "res://Resources/Textures/Masks/mask_2.png")},
         {"high", new Mask(3, "res://Resources/Textures/Masks/mask_3.png")},
