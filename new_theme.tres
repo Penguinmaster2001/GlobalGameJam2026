@@ -1,22 +1,16 @@
 [gd_resource type="Theme" format=3 uid="uid://dnd5igobc3y6u"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2q5q"]
-bg_color = Color(0.36466336, 0.063216485, 0.012875409, 0.6)
-border_width_left = 6
-border_width_top = 10
-border_width_right = 6
-border_width_bottom = 10
-border_color = Color(0.7589139, 0.6014501, 0.23513398, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 20
-shadow_color = Color(0.15294118, 0, 0, 0)
-shadow_size = 20
-shadow_offset = Vector2(1.61, 5.115)
-anti_aliasing_size = 1.21
+[ext_resource type="FontFile" uid="uid://w6u27p6wiudr" path="res://Resources/Fonts/SpecialElite-Regular.ttf" id="1_amlv4"]
+[ext_resource type="Texture2D" uid="uid://b0bcu3qkynsvt" path="res://Resources/Textures/Backgrounds/Chat_Box.png" id="1_i7eh4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78ylj"]
+texture = ExtResource("1_i7eh4")
+expand_margin_left = 234.0
+expand_margin_top = 234.0
+expand_margin_right = 160.0
+expand_margin_bottom = 323.0
+region_rect = Rect2(1173.5999, 1007.19995, 295.20007, 84.79993)
 
 [resource]
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_j2q5q")
+default_font = ExtResource("1_amlv4")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_78ylj")
