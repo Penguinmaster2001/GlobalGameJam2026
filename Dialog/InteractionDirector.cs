@@ -26,9 +26,17 @@ public class InteractionDirector
         _player = player;
 
         _dialogActionHandlers = new() {
+            {DialogActionTypes.None, i => { } },
             {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel -= i },
             {DialogActionTypes.GiveMask, i => {_player.GiveMask(i); Global.Instance.MaskUi.EnableMask(i); } },
         };
+    }
+
+
+
+    public void DoAction(DialogAction dialogAction)
+    {
+        _dialogActionHandlers[dialogAction.ActionType](dialogAction.Value);
     }
 
 
@@ -46,7 +54,7 @@ public class InteractionDirector
         foreach (var action in dialog.Actions)
         {
             GD.Print($"{action.ActionType}, {action.Value}");
-            _dialogActionHandlers[action.ActionType](action.Value);
+            DoAction(action);
         }
         var info = AssembleDialogInfo(interaction, dialogId);
         _dialogUi.Show(info);

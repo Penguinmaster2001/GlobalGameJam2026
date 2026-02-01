@@ -34,10 +34,24 @@ public class Player : IInput
         if (walkInteraction != _currentInteraction)
         {
             _currentInteraction = walkInteraction;
-            GD.Print(walkInteraction.InteractionName);
+            if (walkInteraction.DialogAction.Length > 0)
+            {
+                if (!walkInteraction.MultiUse)
+                {
+                    walkInteraction.Valid = false;
+                }
+                foreach (var action in walkInteraction.DialogAction)
+                {
+                    Global.Instance.Director.DoAction(action);
+                }
+            }
 
             if (Global.Instance.Interactions.Query(walkInteraction.InteractionId, out var interaction))
             {
+                if (!walkInteraction.MultiUse)
+                {
+                    walkInteraction.Valid = false;
+                }
                 Global.Instance.Director.StartInteraction(interaction);
             }
         }

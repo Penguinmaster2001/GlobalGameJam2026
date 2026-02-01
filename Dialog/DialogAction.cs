@@ -9,6 +9,7 @@ namespace Interactions;
 
 public enum DialogActionTypes
 {
+    None,
     ChangeSuspicion,
     GiveMask,
     EndGame,
@@ -19,6 +20,6 @@ public enum DialogActionTypes
 public class DialogAction
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public DialogActionTypes ActionType { get; set; }
-    public int Value { get; set; }
+    public DialogActionTypes ActionType { get; set; } = DialogActionTypes.None;
+    public int Value { get; set; } = 0;
 }

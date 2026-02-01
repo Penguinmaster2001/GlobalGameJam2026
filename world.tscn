@@ -398,13 +398,17 @@ tile_set = SubResource("TileSet_ioo17")
 
 [node name="WalkInteraction" parent="Level/Interactions" unique_id=1971886542 instance=ExtResource("3_036b0")]
 position = Vector2(-62, 330.5)
-InteractionName = "Receptionist"
 InteractionId = 0
 
 [node name="WalkInteraction2" parent="Level/Interactions" unique_id=399376537 instance=ExtResource("3_036b0")]
 position = Vector2(276, 161.5)
-InteractionName = "Guy"
 InteractionId = 1
+
+[node name="WalkInteraction3" parent="Level/Interactions" unique_id=1425110247 instance=ExtResource("3_036b0")]
+position = Vector2(-138, 121.5)
+scale = Vector2(3.95664, 4.1980467)
+ActionTypes = Array[int]([2])
+ActionValues = Array[int]([2])
 
 [node name="PlayerCharacter" parent="." unique_id=1910870109 instance=ExtResource("10_ic0uy")]
 position = Vector2(-277, 1011)
