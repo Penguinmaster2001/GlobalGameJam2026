@@ -28,8 +28,8 @@ public partial class Global : Node2D
 
 
 
-    // [Export]
-    public IDialogUi DialogUi { get; set; } = new MockDialogUi();
+    [Export]
+    public required DialogUiWrapper DialogUi { get; set; }
 
 
 

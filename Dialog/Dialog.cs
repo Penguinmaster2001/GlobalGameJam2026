@@ -13,11 +13,11 @@ public class Dialog
     public int DialogId;
     public Dictionary<int, Response> Responses;
     public List<DialogAction> Actions;
-    public string Text;
+    public string[] Text;
 
 
 
-    public Dialog(int dialogId, string text, List<Response> responses, List<DialogAction> actions)
+    public Dialog(int dialogId, string[] text, List<Response> responses, List<DialogAction> actions)
     {
         DialogId = dialogId;
         Text = text;
@@ -31,7 +31,7 @@ public class Dialog
 
 
 
-    public record DialogData(int DialogId, string Text, List<Response> Responses, List<DialogAction> Actions)
+    public record DialogData(int DialogId, string[] Text, List<Response> Responses, List<DialogAction> Actions)
     {
         public Dialog IntoDialog() => new(this);
     }

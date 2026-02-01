@@ -3,26 +3,39 @@ extends Node2D
 @export var character_sprite: CharacterSprite
 @export var dialog_ui: DialogueUi
 
+signal dialogue_finished
+
 var dialog_index : int = 0
+var in_dialogue : bool = false
+
+
+func _ready() -> void:
+	hide_children()
 
 
 var dialog_lines : Array = []
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func start_dialogue(lines: Array):
+	show_children()
+	in_dialogue = true
 	#load dialogue
-	dialog_lines = load_dialog("res://Resources/Story/story.json")
+	dialog_lines = lines # load_dialog("res://Resources/Story/story.json")
 	#Process the first line of dialogue
 	dialog_index = 0
-	process_current_line() 
+	process_current_line()
 	
 func _input(event):
-	if event.is_action_pressed("next_line"):
+	if in_dialogue && event.is_action_pressed("next_line"):
 		if dialog_ui.animate_text:
 			dialog_ui.skip_text_animation()
 		else:
 			if dialog_index < len(dialog_lines) - 1:
-				dialog_index +=1
+				dialog_index += 1
 				process_current_line()
+			else:
+				in_dialogue = false
+				emit_signal("dialogue_finished")
+
 
 	
 func parse_line(line: String):
@@ -54,3 +67,11 @@ func load_dialog(file_path):
 	
 	#return the dialogue
 	return json_content
+
+func hide_children():
+	for child in get_children():
+		child.visible = false
+
+func show_children():
+	for child in get_children():
+		child.visible = true

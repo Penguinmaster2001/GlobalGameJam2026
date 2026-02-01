@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://eah0el3b2cab" path="res://walk_interaction.tscn" id="3_036b0"]
 [ext_resource type="Texture2D" uid="uid://bov5y1axv1e8j" path="res://Resources/Textures/Tiles/items.png" id="3_ioo17"]
 [ext_resource type="Texture2D" uid="uid://bxjh0il2n4kgj" path="res://rooms/gradient.jpg" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://d4iis4p3gd18d" path="res://DialogueScene.tscn" id="4_ic0uy"]
+[ext_resource type="Script" uid="uid://cjuvre7jyfc8b" path="res://Dialog/UI/DialogUiWrapper.cs" id="4_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://ccn5wwcnnkcpv" path="res://Resources/Textures/Tiles/floor.png" id="4_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://b57uy8w314ayi" path="res://Resources/Textures/Tiles/walls.png" id="5_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ca8a1q7ui8f0r" path="res://top_down_character.tscn" id="10_ic0uy"]
@@ -345,10 +347,11 @@ sources/2 = SubResource("TileSetAtlasSource_k3n1d")
 
 [sub_resource type="Environment" id="Environment_tlwt5"]
 
-[node name="World" type="Node2D" unique_id=1665390062 node_paths=PackedStringArray("PlayerBody", "MaskUi")]
+[node name="World" type="Node2D" unique_id=1665390062 node_paths=PackedStringArray("PlayerBody", "MaskUi", "DialogUi")]
 script = ExtResource("1_dwbse")
 PlayerBody = NodePath("PlayerCharacter")
 MaskUi = NodePath("CanvasLayer/MaskUi")
+DialogUi = NodePath("CanvasLayer/DialogUiWrapper")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=376430899]
 
@@ -360,6 +363,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(18.892157, 18.892157, 18.892157, 0)
+
+[node name="DialogUiWrapper" type="Control" parent="CanvasLayer" unique_id=389878227 node_paths=PackedStringArray("Ui")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("4_k3n1d")
+Ui = NodePath("DialogUi")
+
+[node name="DialogUi" parent="CanvasLayer/DialogUiWrapper" unique_id=1037324033 instance=ExtResource("4_ic0uy")]
 
 [node name="MaskUi" parent="CanvasLayer" unique_id=539509994 instance=ExtResource("2_ic0uy")]
 
