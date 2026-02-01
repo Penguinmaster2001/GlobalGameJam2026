@@ -7,7 +7,7 @@
 [node name="DialogUi" type="Node2D" unique_id=1037324033 node_paths=PackedStringArray("character_sprite", "dialog_ui")]
 script = ExtResource("1_aay13")
 character_sprite = NodePath("CanvasLayer2/Control/CharacterSprite")
-dialog_ui = NodePath("CanvasLayer2/DialogueUI")
+dialog_ui = NodePath("CanvasLayer2/Control/DialogueUI")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232658785]
 
@@ -20,18 +20,14 @@ color = Color(0.9529412, 0.19215687, 0.3019608, 0)
 
 [node name="Control" type="Control" parent="CanvasLayer2" unique_id=1392337920]
 layout_mode = 3
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -208.0
-offset_top = -454.0
-offset_right = 433.0
-offset_bottom = -23.0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CharacterSprite" parent="CanvasLayer2/Control" unique_id=955065750 instance=ExtResource("1_efucv")]
 unique_name_in_owner = true
-position = Vector2(194, -195)
 
-[node name="DialogueUI" parent="CanvasLayer2" unique_id=1722072264 instance=ExtResource("2_aay13")]
-unique_name_in_owner = true
+[node name="DialogueUI" parent="CanvasLayer2/Control" unique_id=1722072264 instance=ExtResource("2_aay13")]
+layout_mode = 1
