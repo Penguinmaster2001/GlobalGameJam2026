@@ -14,6 +14,6 @@ public enum DialogActionTypes
 
 public class DialogAction
 {
-    public DialogActionTypes ActionType;
-    public int Value;
+    public DialogActionTypes ActionType { get; set; }
+    public int Value { get; set; }
 }

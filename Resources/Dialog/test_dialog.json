@@ -2,7 +2,7 @@
 {
     "interaction_id": 0,
     "npc": "Receptionist",
-    "dialogue": [
+    "dialogs": [
         {
             "dialog_id": 0,
             "text": "Welcome to our establishment! How can I assist you today?",
@@ -10,23 +10,23 @@
                 {
                     "response_id": 0,
                     "suspicion_threshold": 100,
-                    "masks": [0, 1, 2],
+                    "required_masks": [0, 1, 2],
                     "text": "I'm looking for information about your services.",
-                    "next_did": 1
+                    "next_dialog_id": 1
                 },
                 {
                     "response_id": 1,
                     "suspicion_threshold": 50,
-                    "masks": [0, 1],
+                    "required_masks": [0, 1],
                     "text": "Can you help me with a reservation?",
-                    "next_did": 2
+                    "next_dialog_id": 2
                 },
                 {
                     "response_id": 2,
                     "suspicion_threshold": 0,
-                    "masks": [0],
+                    "required_masks": [0],
                     "text": "Just browsing, thanks.",
-                    "next_did": -1
+                    "next_dialog_id": -1
                 }
             ],
             "actions": [
@@ -47,16 +47,16 @@
                 {
                     "response_id": 10,
                     "suspicion_threshold": 0,
-                    "masks": [0, 1, 2],
+                    "required_masks": [0, 1, 2],
                     "text": "Tell me more about your dining options.",
-                    "next_did": 4
+                    "next_dialog_id": 4
                 },
                 {
                     "response_id": 11,
                     "suspicion_threshold": 0,
-                    "masks": [0, 1, 2],
+                    "required_masks": [0, 1, 2],
                     "text": "I'm interested in your lodging facilities.",
-                    "next_did": 5
+                    "next_dialog_id": 5
                 }
             ],
             "actions": [

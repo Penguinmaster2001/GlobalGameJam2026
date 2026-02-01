@@ -8,6 +8,9 @@ public partial class WalkInteraction : Area2D
     [Export]
     public string InteractionName = string.Empty;
 
+    [Export]
+    public int InteractionId = -1;
+
 
 
     public override void _Ready()

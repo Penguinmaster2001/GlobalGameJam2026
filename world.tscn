@@ -399,10 +399,12 @@ tile_set = SubResource("TileSet_aqk2v")
 [node name="WalkInteraction" parent="Level/Interactions" unique_id=1971886542 instance=ExtResource("3_036b0")]
 position = Vector2(-44, 330.5)
 InteractionName = "Receptionist"
+InteractionId = 0
 
 [node name="WalkInteraction2" parent="Level/Interactions" unique_id=399376537 instance=ExtResource("3_036b0")]
 position = Vector2(276, 161.5)
 InteractionName = "Guy"
+InteractionId = 1
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=86214825 node_paths=PackedStringArray("_playerBase")]
 position = Vector2(-312, 1016)

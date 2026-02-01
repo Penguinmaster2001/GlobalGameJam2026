@@ -69,6 +69,11 @@ public partial class Player : CharacterBody2D
         {
             _currentInteraction = walkInteraction;
             GD.Print(walkInteraction.InteractionName);
+
+            if (Global.Instance.Interactions.Query(walkInteraction.InteractionId, out var interaction))
+            {
+                GD.Print(interaction.Dialogs[0].Text);
+            }
         }
     }
 }
