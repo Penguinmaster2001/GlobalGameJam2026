@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dcme7pwrbmexh"]
+
+[ext_resource type="Script" uid="uid://q0qbh5rmq0m8" path="res://dialogue_ui.gd" id="1_2x5cq"]
+[ext_resource type="Theme" uid="uid://dnd5igobc3y6u" path="res://new_theme.tres" id="1_njptv"]
+[ext_resource type="Script" uid="uid://bjpy3c18kqviy" path="res://text_blip_sound.gd" id="3_v6amk"]
+
+[sub_resource type="Theme" id="Theme_njptv"]
+default_font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_njptv"]
+font_size = 25
+font_color = Color(0.7607843, 0.6, 0.23529412, 1)
+shadow_size = 5
+shadow_color = Color(0.14901961, 0, 0, 0)
+
+[node name="DialogueUI" type="Control" unique_id=1722072264 node_paths=PackedStringArray("dialog_line", "speaker_name", "text_blip_sound", "text_blip_timer", "sentence_pause_timer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_njptv")
+script = ExtResource("1_2x5cq")
+dialog_line = NodePath("DialogueBox/DialogueLine")
+speaker_name = NodePath("speakerbox/SpeakerName")
+text_blip_sound = NodePath("TextBlipSound")
+text_blip_timer = NodePath("TextBlipTimer")
+sentence_pause_timer = NodePath("SentencePauseTimer")
+
+[node name="DialogueBox" type="PanelContainer" parent="." unique_id=1355113021]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17600001
+anchor_top = 0.776
+anchor_right = 0.78400004
+anchor_bottom = 1.0
+offset_left = -7.752014
+offset_top = 45.151978
+offset_right = -19.16803
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_njptv")
+
+[node name="DialogueLine" type="RichTextLabel" parent="DialogueBox" unique_id=20694303]
+layout_mode = 2
+theme = ExtResource("1_njptv")
+theme_override_colors/default_color = Color(0.7607843, 0.6, 0.23529412, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "test dialogue"
+scroll_following = true
+scroll_following_visible_characters = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="speakerbox" type="PanelContainer" parent="." unique_id=704672670]
+light_mask = 139
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.92300004
+anchor_right = 0.16900001
+anchor_bottom = 1.0
+offset_top = -5.104004
+offset_right = 0.3119812
+grow_vertical = 0
+theme = ExtResource("1_njptv")
+
+[node name="SpeakerName" type="Label" parent="speakerbox" unique_id=1182955019]
+layout_mode = 2
+text = "name"
+label_settings = SubResource("LabelSettings_njptv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBlipSound" type="AudioStreamPlayer" parent="." unique_id=280643187]
+script = ExtResource("3_v6amk")
+
+[node name="TextBlipTimer" type="Timer" parent="." unique_id=867074905]
+wait_time = 0.09
+
+[node name="SentencePauseTimer" type="Timer" parent="." unique_id=1586941186]
+wait_time = 0.35
+one_shot = true
