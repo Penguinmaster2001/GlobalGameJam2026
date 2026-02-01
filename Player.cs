@@ -91,4 +91,12 @@ public partial class Player : CharacterBody2D
 
         PlayerMasks.Add(Mask.Masks[Mask.MaskNames[level]]);
     }
+
+
+
+
+    public void SetCurrentMask(int level)
+    {
+        CurrentMask = PlayerMasks.Find(m => m.Level == level) ?? Mask.Masks["none"];
+    }
 }

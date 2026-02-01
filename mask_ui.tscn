@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://iiuut14ccgj0"]
+
+[ext_resource type="Script" uid="uid://bdgjfnkkjyxrf" path="res://MaskUi.cs" id="1_k2pfd"]
+
+[node name="MaskUi" type="Control" unique_id=539509994]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k2pfd")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1698387072]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -434.0
+offset_top = -132.0
+grow_horizontal = 0
+grow_vertical = 0
+columns = 3

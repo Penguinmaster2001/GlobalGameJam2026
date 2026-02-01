@@ -1,4 +1,5 @@
 
+using System.Diagnostics.CodeAnalysis;
 using Godot;
 using Interactions;
 
@@ -6,12 +7,12 @@ using Interactions;
 
 public partial class Global : Node2D
 {
-    public static Global Instance { get; private set; }
+    public static Global Instance { get; set; }
 
 
 
     [Export]
-    public Player Player { get; private set; }
+    public required Player Player { get; set; }
 
 
 
