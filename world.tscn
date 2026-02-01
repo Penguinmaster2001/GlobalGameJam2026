@@ -419,7 +419,7 @@ position = Vector2(81.5, 42.5)
 scale = Vector2(4.861719, 6.7625775)
 MultiUse = true
 ActionTypes = Array[int]([1])
-ActionValues = Array[int]([1])
+ActionValues = Array[String](["1"])
 
 [node name="PlayerCharacter" parent="." unique_id=1910870109 instance=ExtResource("10_ic0uy")]
 position = Vector2(-277, 1011)

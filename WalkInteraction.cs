@@ -19,7 +19,7 @@ public partial class WalkInteraction : Area2D
     public Array<DialogActionTypes> ActionTypes = [];
 
     [Export]
-    public Array<int> ActionValues = [];
+    public Array<string> ActionValues = [];
 
     [Export]
     public int InteractionId = -1;

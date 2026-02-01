@@ -16,7 +16,7 @@ public class InteractionDirector
     private readonly IDialogUi _dialogUi;
     private readonly NpcTextureDatabase _npcTextureDatabase;
     private readonly Player _player;
-    private readonly Dictionary<DialogActionTypes, Action<int>> _dialogActionHandlers;
+    private readonly Dictionary<DialogActionTypes, Action<string>> _dialogActionHandlers;
 
 
     public InteractionDirector(IDialogUi dialogUi, NpcTextureDatabase npcTextureDatabase, Player player)
@@ -27,8 +27,8 @@ public class InteractionDirector
 
         _dialogActionHandlers = new() {
             {DialogActionTypes.None, i => { } },
-            {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel += i },
-            {DialogActionTypes.GiveMask, i => {_player.GiveMask(i); Global.Instance.MaskUi.EnableMask(i); } },
+            {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel += int.Parse(i) },
+            {DialogActionTypes.GiveMask, i => {_player.GiveMask(int.Parse(i)); Global.Instance.MaskUi.EnableMask(int.Parse(i)); } },
         };
     }
 
