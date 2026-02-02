@@ -1,955 +1,955 @@
 
 [
   {
-    "interaction_id": 0,
-    "npc": "Narration",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "Four months. Four months is a long time to be away from your kid.",
-          "They said summer camp would be good for him. Structure. Fresh air. Other kids.",
-          "Still… this place never sat right with me.",
-          "That storm on the drive here was terrible…",
+	"interaction_id": 0,
+	"npc": "Narration",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "Four months. Four months is a long time to be away from your kid.",
+		  "They said summer camp would be good for him. Structure. Fresh air. Other kids.",
+		  "Still… this place never sat right with me.",
+		  "That storm on the drive here was terrible…",
           "I hope Oliver isn’t too mad that I’m late."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Continue."],
-            "next_dialog_id": 1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "SetObjective",
-            "value": "pick up Oliver"
-          }
-        ]
-      },
-      {
-        "dialog_id": 1,
-        "text": [
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Continue."],
+			"next_dialog_id": 1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "SetObjective",
+			"value": "pick up Oliver"
+		  }
+		]
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
           "Upon entering the facility, you see a strange masked woman at the reception desk."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Approach the receptionist."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Approach the receptionist."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  }
+	]
   },
   {
-    "interaction_id": 1,
-    "npc": "Receptionist",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
+	"interaction_id": 1,
+	"npc": "Receptionist",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
           "Receptionist: Oh hello dear, you’re quite late."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["What are you wearing?"],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 1,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Sorry. The drive was awful."],
-            "next_dialog_id": 2
-          },
-          {
-            "response_id": 2,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["I’m here to pick up Oliver."],
-            "next_dialog_id": 3
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 1,
-        "text": [
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["What are you wearing?"],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 1,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Sorry. The drive was awful."],
+			"next_dialog_id": 2
+		  },
+		  {
+			"response_id": 2,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["I’m here to pick up Oliver."],
+			"next_dialog_id": 3
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
           "Receptionist: Oh, this? We made them with the kids as a goodbye gift. Such talent, truly!"
-        ],
-        "responses": [
-          {
-            "response_id": 10,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Return."],
-            "next_dialog_id": 0
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 2,
-        "text": [
+		],
+		"responses": [
+		  {
+			"response_id": 10,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Return."],
+			"next_dialog_id": 0
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 2,
+		"text": [
           "Receptionist: Weather has a way of delaying our lives. Still, we like to stay on schedule here."
-        ],
-        "responses": [
-          {
-            "response_id": 20,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Return."],
-            "next_dialog_id": 0
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 3,
-        "text": [
-          "Receptionist: … Oliver. Let me see.",
+		],
+		"responses": [
+		  {
+			"response_id": 20,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Return."],
+			"next_dialog_id": 0
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 3,
+		"text": [
+		  "Receptionist: … Oliver. Let me see.",
           "Receptionist: Oh. Our records do not show an Oliver enrolled this season."
-        ],
-        "responses": [
-          {
-            "response_id": 30,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["What? That’s not possible. He’s been here for four months."],
-            "next_dialog_id": 4
-          },
-          {
-            "response_id": 31,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Can I speak to a counselor?"],
-            "next_dialog_id": 5
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 4,
-        "text": [
-          "Receptionist: Four months? My, that would be quite the oversight.",
+		],
+		"responses": [
+		  {
+			"response_id": 30,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["What? That’s not possible. He’s been here for four months."],
+			"next_dialog_id": 4
+		  },
+		  {
+			"response_id": 31,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Can I speak to a counselor?"],
+			"next_dialog_id": 5
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 4,
+		"text": [
+		  "Receptionist: Four months? My, that would be quite the oversight.",
           "Receptionist: Still, if he is not registered, he cannot be here."
-        ],
-        "responses": [
-          {
-            "response_id": 40,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Can I speak to a counselor?"],
-            "next_dialog_id": 5
-          },
-          {
-            "response_id": 41,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 5,
-        "text": [
-          "Receptionist: Staff duties have concluded for the evening.",
+		],
+		"responses": [
+		  {
+			"response_id": 40,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Can I speak to a counselor?"],
+			"next_dialog_id": 5
+		  },
+		  {
+			"response_id": 41,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 5,
+		"text": [
+		  "Receptionist: Staff duties have concluded for the evening.",
           "Receptionist: The lodge is now reserved."
-        ],
-        "responses": [
-          {
-            "response_id": 50,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Reserved for what?"],
-            "next_dialog_id": 6
-          },
-          {
-            "response_id": 51,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Okay, thanks I guess… (leave)."],
-            "next_dialog_id": -1
-          },
-          {
-            "response_id": 52,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["I’m just gonna take a look around, I'll be in and out."],
-            "next_dialog_id": 7
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 6,
-        "text": [
+		],
+		"responses": [
+		  {
+			"response_id": 50,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Reserved for what?"],
+			"next_dialog_id": 6
+		  },
+		  {
+			"response_id": 51,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Okay, thanks I guess… (leave)."],
+			"next_dialog_id": -1
+		  },
+		  {
+			"response_id": 52,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["I’m just gonna take a look around, I'll be in and out."],
+			"next_dialog_id": 7
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 6,
+		"text": [
           "Receptionist: Private matters."
-        ],
-        "responses": [
-          {
-            "response_id": 60,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Okay, thanks I guess… (leave)."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 7,
-        "text": [
-          "Receptionist: I am afraid I cannot let you in any further.",
+		],
+		"responses": [
+		  {
+			"response_id": 60,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Okay, thanks I guess… (leave)."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 7,
+		"text": [
+		  "Receptionist: I am afraid I cannot let you in any further.",
           "Receptionist: As I said before, the lodge has a private reservation. You need to leave."
-        ],
-        "responses": [
-          {
-            "response_id": 70,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 8,
-        "text": [
+		],
+		"responses": [
+		  {
+			"response_id": 70,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 8,
+		"text": [
           "Receptionist: You cannot enter."
-        ],
-        "responses": [
-          {
-            "response_id": 80,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Step back."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 80,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Step back."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  }
+	]
   },
   {
-    "interaction_id": 2,
-    "npc": "PlayerInternalReceptionExit",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "Player: There’s something really wrong here. They don’t have him on record. That makes no sense.",
-          "Player: I remember signing forms. I remember this place.",
-          "Player: Maybe I can wait for her to leave, then try to get through the main door.",
-          "TEXT: 30 minutes pass.",
+	"interaction_id": 2,
+	"npc": "PlayerInternalReceptionExit",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "Player: There’s something really wrong here. They don’t have him on record. That makes no sense.",
+		  "Player: I remember signing forms. I remember this place.",
+		  "Player: Maybe I can wait for her to leave, then try to get through the main door.",
+		  "TEXT: 30 minutes pass.",
           "The main door is locked."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Continue."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Continue."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  }
+	]
   },
   {
-    "interaction_id": 3,
-    "npc": "NarrationReceptionDeskMask",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "You look around the reception area.",
+	"interaction_id": 3,
+	"npc": "NarrationReceptionDeskMask",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "You look around the reception area.",
           "Behind the reception desk, partially hidden, you spot one of the strange masks."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Grab the mask."],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 1,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Leave it for now."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 1,
-        "text": [
-          "You pick up the mask from behind the desk.",
-          "On the back, you read: \"lvl 1 access\".",
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Grab the mask."],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 1,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Leave it for now."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
+		  "You pick up the mask from behind the desk.",
+		  "On the back, you read: \"lvl 1 access\".",
           "Player: Huh.. Maybe I need this to get through the main door?"
-        ],
-        "responses": [
-          {
-            "response_id": 10,
-            "suspicion_threshold": 100,
-            "required_masks": [0],
-            "text": ["Continue."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "GiveMask",
-            "value": "1"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 10,
+			"suspicion_threshold": 100,
+			"required_masks": [0],
+			"text": ["Continue."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "GiveMask",
+			"value": "1"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 4,
-    "npc": "NarrationMainDoorAccess",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "Wearing the mask, you ring the reception bell.",
+	"interaction_id": 4,
+	"npc": "NarrationMainDoorAccess",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "Wearing the mask, you ring the reception bell.",
           "After a tense moment, you hear a click from the main door. It is now unlocked."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Enter through the main door."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Enter through the main door."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  }
+	]
   },
   {
-    "interaction_id": 5,
-    "npc": "Upper Cultist",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
+	"interaction_id": 5,
+	"npc": "Upper Cultist",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
           "Upper Cultist: Chanting…"
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["What’s going on? (+1 suspicion)"],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 1,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["I’m looking for a small boy. (+2 suspicion)"],
-            "next_dialog_id": 3
-          },
-          {
-            "response_id": 2,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 1,
-        "text": [
-          "Upper Cultist: … The order has finally reunited…",
-          "Player: Uhh, order?",
-          "Upper Cultist: They really let anyone in these days… after 3 years, the day of rejuvenation is upon us. We gather to speak to our god…",
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["What’s going on? (+1 suspicion)"],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 1,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["I’m looking for a small boy. (+2 suspicion)"],
+			"next_dialog_id": 3
+		  },
+		  {
+			"response_id": 2,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
+		  "Upper Cultist: … The order has finally reunited…",
+		  "Player: Uhh, order?",
+		  "Upper Cultist: They really let anyone in these days… after 3 years, the day of rejuvenation is upon us. We gather to speak to our god…",
           "Player: Oh, right. Yeah.. Rejuvenation and whatnot…"
-        ],
-        "responses": [
-          {
-            "response_id": 10,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["I’m looking for a small boy. (+2 suspicion)"],
-            "next_dialog_id": 3
-          },
-          {
-            "response_id": 11,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "ChangeSuspicion",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "dialog_id": 3,
-        "text": [
-          "Upper Cultist: A boy..? Can you not hold still until the ceremony. These new members really get on my nerves…",
-          "Player: I’m helping out with the event, I’m just a little lost.",
+		],
+		"responses": [
+		  {
+			"response_id": 10,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["I’m looking for a small boy. (+2 suspicion)"],
+			"next_dialog_id": 3
+		  },
+		  {
+			"response_id": 11,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "ChangeSuspicion",
+			"value": "1"
+		  }
+		]
+	  },
+	  {
+		"dialog_id": 3,
+		"text": [
+		  "Upper Cultist: A boy..? Can you not hold still until the ceremony. These new members really get on my nerves…",
+		  "Player: I’m helping out with the event, I’m just a little lost.",
           "Upper Cultist: Well, you forget yourself. You may not speak to me unless you obtain a mask like mine. I have spent years earning the honour to wear this."
-        ],
-        "responses": [
-          {
-            "response_id": 30,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Nevermind. Leave."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "ChangeSuspicion",
-            "value": "2"
-          },
-          {
-            "action_type": "SetObjective",
-            "value": "find a level 2 mask"
-          }
-        ]
-      },
-      {
-        "dialog_id": 4,
-        "text": [
+		],
+		"responses": [
+		  {
+			"response_id": 30,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Nevermind. Leave."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "ChangeSuspicion",
+			"value": "2"
+		  },
+		  {
+			"action_type": "SetObjective",
+			"value": "find a level 2 mask"
+		  }
+		]
+	  },
+	  {
+		"dialog_id": 4,
+		"text": [
           "Upper Cultist: Too anxious to wait, are we? We must all sit tight until the higher order is ready to commence."
-        ],
-        "responses": [
-          {
-            "response_id": 40,
-            "suspicion_threshold": 100,
-            "required_masks": [1, 2],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "ChangeSuspicion",
-            "value": "2"
-          },
-          {
-            "action_type": "SetObjective",
-            "value": "Distract the upper cultist"
-          }
-        ]
-      },
-      {
-        "dialog_id": 5,
-        "text": [
-          "Player: I think the receptionist wanted to speak with you.",
-          "Upper Cultist: You forget your order! Do not speak to me unless you have reached my status.",
-          "Upper Cultist: Sighs. You are new. You will learn. What business might she have with me?",
+		],
+		"responses": [
+		  {
+			"response_id": 40,
+			"suspicion_threshold": 100,
+			"required_masks": [1, 2],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "ChangeSuspicion",
+			"value": "2"
+		  },
+		  {
+			"action_type": "SetObjective",
+			"value": "Distract the upper cultist"
+		  }
+		]
+	  },
+	  {
+		"dialog_id": 5,
+		"text": [
+		  "Player: I think the receptionist wanted to speak with you.",
+		  "Upper Cultist: You forget your order! Do not speak to me unless you have reached my status.",
+		  "Upper Cultist: Sighs. You are new. You will learn. What business might she have with me?",
           "Player: I don’t know but it seemed urgent."
-        ],
-        "responses": [
-          {
-            "response_id": 50,
-            "suspicion_threshold": 100,
-            "required_masks": [1, 2],
-            "text": ["Nevermind. Leave."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "ChangeSuspicion",
-            "value": "1"
-          },
-          {
-            "action_type": "SetObjective",
-            "value": "find level 2 mask"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 50,
+			"suspicion_threshold": 100,
+			"required_masks": [1, 2],
+			"text": ["Nevermind. Leave."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "ChangeSuspicion",
+			"value": "1"
+		  },
+		  {
+			"action_type": "SetObjective",
+			"value": "find level 2 mask"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 6,
-    "npc": "Level1 Cultist",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
+	"interaction_id": 6,
+	"npc": "Level1 Cultist",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
           "Cultist: Hm, you must be new. The masks signify our places among the order. We must follow those with higher authority."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["What’s the deal with the masks?"],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 1,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["I’m looking for a small boy. (+1 suspicion)"],
-            "next_dialog_id": 2
-          },
-          {
-            "response_id": 2,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 1,
-        "text": [
-          "Player: How would I get a higher mask?",
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["What’s the deal with the masks?"],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 1,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["I’m looking for a small boy. (+1 suspicion)"],
+			"next_dialog_id": 2
+		  },
+		  {
+			"response_id": 2,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
+		  "Player: How would I get a higher mask?",
           "Cultist: Foolish! You must show your commitment to the order! But if you’re that desperate, you can read about the masks in the book room."
-        ],
-        "responses": [
-          {
-            "response_id": 10,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["I’m looking for a small boy. (+1 suspicion)"],
-            "next_dialog_id": 2
-          },
-          {
-            "response_id": 11,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 2,
-        "text": [
+		],
+		"responses": [
+		  {
+			"response_id": 10,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["I’m looking for a small boy. (+1 suspicion)"],
+			"next_dialog_id": 2
+		  },
+		  {
+			"response_id": 11,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 2,
+		"text": [
           "Cultist: A boy… There are several but I am not supposed to say anything."
-        ],
-        "responses": [
-          {
-            "response_id": 20,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "ChangeSuspicion",
-            "value": "1"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 20,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "ChangeSuspicion",
+			"value": "1"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 7,
-    "npc": "PlayerInternalMainHall",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "Player: I need to find Oliver and get out of here quickly.",
+	"interaction_id": 7,
+	"npc": "PlayerInternalMainHall",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "Player: I need to find Oliver and get out of here quickly.",
           "Player: This ceremony they keep talking about can’t be good."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Continue."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "SetObjective",
-            "value": "Distract the upper cultist"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Continue."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "SetObjective",
+			"value": "Distract the upper cultist"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 8,
-    "npc": "NarrationBookRoom",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "The upper right door leads into a quiet room lined with shelves.",
-          "On the wall hangs a level 2 mask, just out of reach.",
+	"interaction_id": 8,
+	"npc": "NarrationBookRoom",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "The upper right door leads into a quiet room lined with shelves.",
+		  "On the wall hangs a level 2 mask, just out of reach.",
           "Some of the floor boards look old; a few creak loudly underfoot."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Stack books to reach the mask."],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 1,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Leave the room."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 1,
-        "text": [
-          "You collect and stack four sturdy books beneath the mask.",
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Stack books to reach the mask."],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 1,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Leave the room."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
+		  "You collect and stack four sturdy books beneath the mask.",
           "Carefully, you climb up, avoiding the worst of the creaky boards, and take the level 2 mask from the wall."
-        ],
-        "responses": [
-          {
-            "response_id": 10,
-            "suspicion_threshold": 100,
-            "required_masks":  [1],
-            "text": ["Put on the level 2 mask."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "ChangeSuspicion",
-            "value": "1"
-          },
-          {
-            "action_type": "GiveMask",
-            "value": "2"
-          },
-          {
-            "action_type": "SetObjective",
-            "value": "investigate the other rooms"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 10,
+			"suspicion_threshold": 100,
+			"required_masks":  [1],
+			"text": ["Put on the level 2 mask."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "ChangeSuspicion",
+			"value": "1"
+		  },
+		  {
+			"action_type": "GiveMask",
+			"value": "2"
+		  },
+		  {
+			"action_type": "SetObjective",
+			"value": "investigate the other rooms"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 9,
-    "npc": "Level2 NPCs (Middle Left Room)",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
+	"interaction_id": 9,
+	"npc": "Level2 NPCs (Middle Left Room)",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
           "Level 2 NPC: Greetings."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["What’s past that door?"],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 1,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["How long until the ceremony?"],
-            "next_dialog_id": 2
-          },
-          {
-            "response_id": 2,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 1,
-        "text": [
-          "Level 2 NPC: I see. You are making a joke. How comedic!",
-          "Level 2 NPC: We all know it is the ritual friend. In due time, we will reap life and share it among our followers.",
-          "Player: you’re going to kill someone?",
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["What’s past that door?"],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 1,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["How long until the ceremony?"],
+			"next_dialog_id": 2
+		  },
+		  {
+			"response_id": 2,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
+		  "Level 2 NPC: I see. You are making a joke. How comedic!",
+		  "Level 2 NPC: We all know it is the ritual friend. In due time, we will reap life and share it among our followers.",
+		  "Player: you’re going to kill someone?",
           "Level 2 NPC: …There is always a balance. You must take life to give life."
-        ],
-        "responses": [
-          {
-            "response_id": 10,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["How long until the ceremony?"],
-            "next_dialog_id": 2
-          },
-          {
-            "response_id": 11,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "ChangeSuspicion",
-            "value": "1"
-          },
-          {
-            "action_type": "SetObjective",
-            "value": "find a way through the door"
-          }
-        ]
-      },
-      {
-        "dialog_id": 2,
-        "text": [
-          "Level 2 NPC: We shall commence once our third is ready to begin.",
+		],
+		"responses": [
+		  {
+			"response_id": 10,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["How long until the ceremony?"],
+			"next_dialog_id": 2
+		  },
+		  {
+			"response_id": 11,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "ChangeSuspicion",
+			"value": "1"
+		  },
+		  {
+			"action_type": "SetObjective",
+			"value": "find a way through the door"
+		  }
+		]
+	  },
+	  {
+		"dialog_id": 2,
+		"text": [
+		  "Level 2 NPC: We shall commence once our third is ready to begin.",
           "Level 2 NPC: Until then, these doors stay shut."
-        ],
-        "responses": [
-          {
-            "response_id": 20,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Return to the other question."],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 21,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 20,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Return to the other question."],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 21,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  }
+	]
   },
   {
-    "interaction_id": 10,
-    "npc": "Cult Leader (Lower Left Room)",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
+	"interaction_id": 10,
+	"npc": "Cult Leader (Lower Left Room)",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
           "Cult Leader: Finally… After 3 years, we may all embrace an extension of life."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["When are we starting?"],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 1,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Nevermind."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 1,
-        "text": [
-          "Cult Leader: You dare speak to me? You belong to a lower order.",
-          "Cult Leader: Sighs. I required someone to give me a knife anyways.",
-          "Cult Leader: One cannot commence a proper ceremony without their instrument.",
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["When are we starting?"],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 1,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Nevermind."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
+		  "Cult Leader: You dare speak to me? You belong to a lower order.",
+		  "Cult Leader: Sighs. I required someone to give me a knife anyways.",
+		  "Cult Leader: One cannot commence a proper ceremony without their instrument.",
           "Cult Leader: I believe I left it in the reception room."
-        ],
-        "responses": [
-          {
-            "response_id": 10,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "ChangeSuspicion",
-            "value": "1"
-          },
-          {
-            "action_type": "SetObjective",
-            "value": "find the knife"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 10,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "ChangeSuspicion",
+			"value": "1"
+		  },
+		  {
+			"action_type": "SetObjective",
+			"value": "find the knife"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 11,
-    "npc": "NarrationKnifePickup",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "You search the reception room and find a knife tucked away.",
+	"interaction_id": 11,
+	"npc": "NarrationKnifePickup",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "You search the reception room and find a knife tucked away.",
           "Player: This can’t be real.. I can’t just give this to them- t-they’re going to hurt Oliver. I need to end this. Now."
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Take the knife."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "GiveItem",
-            "value": "knife"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Take the knife."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "GiveItem",
+			"value": "knife"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 12,
-    "npc": "Level1 Cultist (Main Room, with Level 2 Mask)",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
+	"interaction_id": 12,
+	"npc": "Level1 Cultist (Main Room, with Level 2 Mask)",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
           "Cultist: Yes?"
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["I need you to make some noise. Chef’s orders to gather everyone here before we begin."],
-            "next_dialog_id": 1
-          },
-          {
-            "response_id": 1,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Leave the conversation."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": []
-      },
-      {
-        "dialog_id": 1,
-        "text": [
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["I need you to make some noise. Chef’s orders to gather everyone here before we begin."],
+			"next_dialog_id": 1
+		  },
+		  {
+			"response_id": 1,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Leave the conversation."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": []
+	  },
+	  {
+		"dialog_id": 1,
+		"text": [
           "Cultist: Yes sir. Make noise."
-        ],
-        "responses": [
-          {
-            "response_id": 10,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Leave."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "TriggerEvent",
-            "value": "CultistsDistracted"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 10,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Leave."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "TriggerEvent",
+			"value": "CultistsDistracted"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 13,
-    "npc": "NarrationCultLeaderKill",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "With the cultists distracted and the knife in hand, you confront the cult leader.",
+	"interaction_id": 13,
+	"npc": "NarrationCultLeaderKill",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "With the cultists distracted and the knife in hand, you confront the cult leader.",
           "(Gameplay: the player kills the cult leader and takes their mask.)"
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [2],
-            "text": ["Take the cult leader’s mask."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "GiveMask",
-            "value": "3"
-          },
-          {
-            "action_type": "SetObjective",
-            "value": "enter the ritual room"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [2],
+			"text": ["Take the cult leader’s mask."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "GiveMask",
+			"value": "3"
+		  },
+		  {
+			"action_type": "SetObjective",
+			"value": "enter the ritual room"
+		  }
+		]
+	  }
+	]
   },
   {
-    "interaction_id": 14,
-    "npc": "NarrationRitualRoom",
-    "dialogs": [
-      {
-        "dialog_id": 0,
-        "text": [
-          "Wearing the cult leader’s mask, you enter the ritual room to bring this to an end.",
+	"interaction_id": 14,
+	"npc": "NarrationRitualRoom",
+	"dialogs": [
+	  {
+		"dialog_id": 0,
+		"text": [
+		  "Wearing the cult leader’s mask, you enter the ritual room to bring this to an end.",
           "(End of current script segment.)"
-        ],
-        "responses": [
-          {
-            "response_id": 0,
-            "suspicion_threshold": 100,
-            "required_masks":  [3],
-            "text": ["Continue."],
-            "next_dialog_id": -1
-          }
-        ],
-        "actions": [
-          {
-            "action_type": "EndGame",
-            "value": "0"
-          }
-        ]
-      }
-    ]
+		],
+		"responses": [
+		  {
+			"response_id": 0,
+			"suspicion_threshold": 100,
+			"required_masks":  [3],
+			"text": ["Continue."],
+			"next_dialog_id": -1
+		  }
+		],
+		"actions": [
+		  {
+			"action_type": "EndGame",
+			"value": "0"
+		  }
+		]
+	  }
+	]
   }
 ]
