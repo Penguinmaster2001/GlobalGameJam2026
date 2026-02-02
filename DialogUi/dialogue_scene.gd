@@ -40,6 +40,7 @@ func _input(event):
 
 	
 func parse_line(line: String):
+	print("line:")
 	print(line)
 	var line_info = line.split(":")
 	assert(len(line_info) >= 2)
@@ -51,7 +52,7 @@ func parse_line(line: String):
 func process_current_line():
 	var line = dialog_lines[dialog_index]
 	var line_info = parse_line(line)
-	var character_name = Character.get_enum_from_string(line_info["speaker_name"])
+	var character_name = line_info["speaker_name"]
 	dialog_ui.speaker_name.text = line_info["speaker_name"]
 	dialog_ui.change_line(character_name, line_info["dialog_line"])
 	character_sprite.change_character(character_name)

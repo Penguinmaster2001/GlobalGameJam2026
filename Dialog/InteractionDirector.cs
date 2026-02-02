@@ -80,5 +80,5 @@ public class InteractionDirector
 
 
     private string[] AppendCharacterName(IEnumerable<string> text, string name)
-        => [.. text.Select(t => t.StartsWith($"{name}:") ? t : $"{name}: {text}")];
+        => [.. text.Select(t => t.StartsWith($"{name}:") ? t : $"{name}: {t}")];
 }

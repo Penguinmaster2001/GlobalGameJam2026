@@ -35,9 +35,8 @@ func _process(delta):
 			animate_text = false
 			text_blip_timer.stop()
 			
-func change_line(character_name: Character.Name, line: String):
-	current_character_details = Character.CHARACTER_DETAILS[character_name]
-	speaker_name.text = current_character_details["name"]
+func change_line(character_name: String, line: String):
+	speaker_name.text = character_name
 	current_visible_characters = 0
 	dialog_line.text = line
 	dialog_line.visible_characters = 0
@@ -49,7 +48,7 @@ func skip_text_animation():
 	dialog_line.visible_ratio = 1
 
 func _on_text_blip_timeout():
-	text_blip_sound.play_sound(current_character_details)
+	text_blip_sound.play_sound("normal")
 
 func _on_sentence_pause_timeout():
 	text_blip_timer.start()	
