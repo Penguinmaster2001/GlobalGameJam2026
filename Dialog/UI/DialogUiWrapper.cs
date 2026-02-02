@@ -34,4 +34,11 @@ public partial class DialogUiWrapper : Control, IDialogUi
         Ui.Call("hide_children");
         GD.Print("dialog done");
     }
+
+
+
+    public void End()
+    {
+        Ui.Call("hide_children");
+    }
 }

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 var dialog_lines : Array = []
 # Called when the node enters the scene tree for the first time.
-func start_dialogue(lines: Array, characters: Dictionary, responses: Array):
+func start_dialogue(lines: Array, characters: Dictionary):
 	Character.CHARACTER_DETAILS = characters
 	show_children()
 	in_dialogue = true

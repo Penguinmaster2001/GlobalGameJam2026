@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://wipjgue0lowh"]
+
+[ext_resource type="Theme" uid="uid://wb6vvtf2i2ir" path="res://new_theme.tres" id="1_rfbpx"]
+[ext_resource type="Texture2D" uid="uid://b0bcu3qkynsvt" path="res://Resources/Textures/Backgrounds/Chat_Box.png" id="2_qwe1m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wb7l"]
+texture = ExtResource("2_qwe1m")
+expand_margin_left = 405.0
+expand_margin_top = 336.0
+expand_margin_right = 591.0
+expand_margin_bottom = 276.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3wb7l"]
+
+[node name="Button" type="Button" unique_id=100749144]
+clip_contents = true
+custom_minimum_size = Vector2(0, 75)
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_rfbpx")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.3647059, 0.0627451, 0.011764706, 1)
+theme_override_colors/font_hover_color = Color(0.3647059, 0.0627451, 0.011764706, 0.98039216)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wb7l")
+text = "Choice 1"
+icon = SubResource("CanvasTexture_3wb7l")

@@ -17,6 +17,7 @@ public class InteractionDirector
     private readonly NpcTextureDatabase _npcTextureDatabase;
     private readonly Player _player;
     private readonly Dictionary<DialogActionTypes, Action<string>> _dialogActionHandlers;
+    private Interaction? _currentInteraction = null;
 
 
     public InteractionDirector(IDialogUi dialogUi, NpcTextureDatabase npcTextureDatabase, Player player)
@@ -49,9 +50,23 @@ public class InteractionDirector
 
 
 
+    public void ChoseResponse(Response response)
+    {
+        if (_currentInteraction is Interaction interaction)
+        {
+            SendDialog(interaction, response.NextDialogId);
+        }
+    }
+
+
+
     private void SendDialog(Interaction interaction, int dialogId)
     {
-        var dialog = interaction.Dialogs[dialogId];
+        if (!interaction.Dialogs.TryGetValue(dialogId, out var dialog))
+        {
+            _dialogUi.End();
+            return;
+        }
         foreach (var action in dialog.Actions)
         {
             GD.Print($"{action.ActionType}, {action.Value}");
