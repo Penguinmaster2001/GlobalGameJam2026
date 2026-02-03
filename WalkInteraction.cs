@@ -1,5 +1,4 @@
 
-using System;
 using System.Linq;
 using Godot;
 using Godot.Collections;
@@ -22,7 +21,7 @@ public partial class WalkInteraction : Area2D
     public Array<string> ActionValues = [];
 
     [Export]
-    public int InteractionId = -1;
+    public Array<int> InteractionId = [];
 
     public DialogAction[] DialogAction = [];
 

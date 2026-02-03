@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @export var character_sprite: CharacterSprite
 @export var dialog_ui: DialogueUi
@@ -9,15 +9,11 @@ var dialog_index : int = 0
 var in_dialogue : bool = false
 
 
-func _ready() -> void:
-	hide_children()
-
-
 var dialog_lines : Array = []
 # Called when the node enters the scene tree for the first time.
 func start_dialogue(lines: Array, characters: Dictionary):
 	Character.CHARACTER_DETAILS = characters
-	show_children()
+	print(characters);
 	in_dialogue = true
 	#load dialogue
 	dialog_lines = lines # load_dialog("res://Resources/Story/story.json")
@@ -43,7 +39,9 @@ func parse_line(line: String):
 	print("line:")
 	print(line)
 	var line_info = line.split(":")
-	assert(len(line_info) >= 2)
+	if (len(line_info) < 2):
+		line_info = ["Narrator", line_info[0]]
+	# assert(len(line_info) >= 2)
 	return {
 		"speaker_name": line_info[0],
 		"dialog_line": line_info[1]
@@ -70,11 +68,3 @@ func load_dialog(file_path):
 	
 	#return the dialogue
 	return json_content
-
-func hide_children():
-	for child in get_children():
-		child.visible = false
-
-func show_children():
-	for child in get_children():
-		child.visible = true

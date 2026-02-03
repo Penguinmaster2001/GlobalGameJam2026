@@ -20,6 +20,7 @@ public class InteractionDirector
     private Interaction? _currentInteraction = null;
 
 
+
     public InteractionDirector(IDialogUi dialogUi, NpcTextureDatabase npcTextureDatabase, Player player)
     {
         _dialogUi = dialogUi;
@@ -31,6 +32,7 @@ public class InteractionDirector
             {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel += int.Parse(i) },
             {DialogActionTypes.GiveMask, i => {_player.GiveMask(int.Parse(i)); Global.Instance.MaskUi.EnableMask(int.Parse(i)); } },
             {DialogActionTypes.SetObjective, i => Global.Instance.ObjectiveManager.CurrentObjective = i },
+            {DialogActionTypes.TriggerEvent, i => Global.Instance.Jumpscare.Visible = true },
         };
     }
 
@@ -45,6 +47,7 @@ public class InteractionDirector
 
     public void StartInteraction(Interaction interaction)
     {
+        _currentInteraction = interaction;
         SendDialog(interaction, 0);
     }
 
@@ -54,6 +57,8 @@ public class InteractionDirector
     {
         if (_currentInteraction is Interaction interaction)
         {
+            GD.Print(response.Text);
+            GD.Print(response.NextDialogId);
             SendDialog(interaction, response.NextDialogId);
         }
     }
@@ -65,6 +70,7 @@ public class InteractionDirector
         if (!interaction.Dialogs.TryGetValue(dialogId, out var dialog))
         {
             _dialogUi.End();
+            _currentInteraction = null;
             return;
         }
         foreach (var action in dialog.Actions)
@@ -73,7 +79,7 @@ public class InteractionDirector
             DoAction(action);
         }
         var info = AssembleDialogInfo(interaction, dialogId);
-        _dialogUi.Show(info);
+        _dialogUi.Show(info, this);
     }
 
 
@@ -82,18 +88,21 @@ public class InteractionDirector
     {
         var dialog = interaction.Dialogs[dialogId];
         var filteredResponses = FilterResponses(dialog.Responses.Values);
-        return new DialogInfo(_npcTextureDatabase.Query([interaction.Npc, "player"]), filteredResponses, AppendCharacterName(dialog.Text, interaction.Npc));
+        if (filteredResponses.Count <= 0)
+        {
+            filteredResponses = [new(0, 100, [], ["Continue"], -1)];
+        }
+        return new DialogInfo(_npcTextureDatabase.Query([interaction.Npc, "player"]), filteredResponses, dialog.Text);
     }
 
 
 
-    private List<string[]> FilterResponses(IEnumerable<Response> responses)
+    private List<Response> FilterResponses(IEnumerable<Response> responses)
         => [.. responses.Where(r => r.RequiredMasks.Contains(_player.CurrentMask.Level)
-            && r.SuspicionThreshold >= _player.SuspicionLevel).Select(r => AppendCharacterName(r.Text, "player"))];
-
+            && r.SuspicionThreshold >= _player.SuspicionLevel)];
 
 
 
     private string[] AppendCharacterName(IEnumerable<string> text, string name)
-        => [.. text.Select(t => t.StartsWith($"{name}:") ? t : $"{name}: {t}")];
+        => [.. text.Select(t => t.StartsWith($"{name.ToLower()}:") ? t : $"{name.ToLower()}: {t}")];
 }

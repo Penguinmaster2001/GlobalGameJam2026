@@ -5,16 +5,19 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wb7l"]
 texture = ExtResource("2_qwe1m")
-expand_margin_left = 405.0
-expand_margin_top = 336.0
-expand_margin_right = 591.0
-expand_margin_bottom = 276.0
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_3wb7l"]
 
 [node name="Button" type="Button" unique_id=100749144]
-clip_contents = true
-custom_minimum_size = Vector2(0, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -73.5
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_default_cursor_shape = 2
 theme = ExtResource("1_rfbpx")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -23,4 +26,5 @@ theme_override_colors/font_hover_color = Color(0.3647059, 0.0627451, 0.011764706
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_3wb7l")
 text = "Choice 1"
-icon = SubResource("CanvasTexture_3wb7l")
+autowrap_mode = 3
+autowrap_trim_flags = 192

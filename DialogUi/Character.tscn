@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bfhs1r85ao1va"]
+
+[ext_resource type="Script" uid="uid://dmv1yp4mja387" path="res://DialogUi/character_sprite.gd" id="1_7ig0a"]
+[ext_resource type="Texture2D" uid="uid://cmh640gicpkgt" path="res://Resources/Characters/player.png" id="1_q50pd"]
+
+[node name="CharacterSprite" type="TextureRect" unique_id=1953165474]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+offset_right = 300.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_q50pd")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("1_7ig0a")
+default_texture = ExtResource("1_q50pd")

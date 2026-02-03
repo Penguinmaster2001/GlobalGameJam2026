@@ -1,4 +1,5 @@
 
+using System;
 using Godot;
 
 
@@ -10,7 +11,16 @@ namespace Interactions.UI;
 public partial class DialogUiWrapper : Control, IDialogUi
 {
     [Export]
-    public required Node2D Ui { get; set; }
+    public required Control Ui { get; set; }
+ 
+
+
+    [Export]
+    public required ChoicesContainer Choices { get; set; }
+
+
+
+    public event Action? DialogFinished = null;
 
 
 
@@ -22,23 +32,26 @@ public partial class DialogUiWrapper : Control, IDialogUi
 
 
 
-    public void Show(DialogInfo dialog)
+    public void Show(DialogInfo dialog, InteractionDirector director)
     {
-        Ui.Call("start_dialogue", dialog.Text, dialog.CharacterTextures, dialog.Responses);
+        Ui.Call("start_dialogue", dialog.Text, dialog.CharacterTextures);
+        Choices.Show(dialog.Responses, director);
+        Ui.Visible = true;
     }
 
 
 
     private void OnDialogFinished()
     {
-        Ui.Call("hide_children");
-        GD.Print("dialog done");
+        DialogFinished?.Invoke();
+        // Ui.Call("hide_children");
+        // GD.Print("dialog done");
     }
 
 
 
     public void End()
     {
-        Ui.Call("hide_children");
+        Ui.Visible = false;
     }
 }

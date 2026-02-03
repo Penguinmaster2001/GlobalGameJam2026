@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.IO;
 using Godot;
 using Interactions;
 using Interactions.UI;
@@ -15,6 +16,10 @@ public partial class Global : Node2D
 
     [Export]
     public required TopDownCharacter PlayerBody { get; set; }
+
+
+    [Export]
+    public required Sprite2D Jumpscare;
 
 
 
@@ -64,11 +69,30 @@ public partial class Global : Node2D
         var interactions = DialogManager.LoadDialogs("res://Resources/Story/story.json");
         Interactions = new(interactions);
 
+        var texturePath = "res://Resources/Textures/Characters";
         var textures = new Dictionary<string, Texture2D>();
+        foreach (var file in DirAccess.Open(texturePath).GetFiles())
+        {
+            var name = Path.GetFileNameWithoutExtension(file);
+            if (name.Contains('.')) continue;
+            GD.Print(name);
+            var texture = GD.Load(Path.Combine(texturePath, file));
+            if (texture is Texture2D validTexture)
+            {
+                textures.Add(name, validTexture);
+            }
+        }
         NpcTextures = new(textures);
 
         Director = new(DialogUi, NpcTextures, Player);
 
         MaskUi.AddMasks(Mask.Masks.Values);
+
+
+
+        if (Interactions.Query(0, out var interaction))
+        {
+            Director.StartInteraction(interaction);
+        }
     }
 }

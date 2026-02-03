@@ -1,11 +1,19 @@
 
+using System;
+
+
+
 namespace Interactions.UI;
 
 
 
 public interface IDialogUi
 {
-    public void Show(DialogInfo dialog);
+    event Action? DialogFinished;
+
+
+    
+    public void Show(DialogInfo dialog, InteractionDirector director);
 
 
 

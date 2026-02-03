@@ -31,6 +31,11 @@ public class NpcTextureDatabase
 
 
     public Dictionary<string, Texture2D> Query(List<string> npcNames)
-        => npcNames.Select(name => (name, exists: _textures.TryGetValue(name.ToLower(), out var texture), texture))
-            .Where(t => t.exists).ToDictionary(t => t.name, t => t.texture!);
+    {
+        GD.Print(string.Join(',', npcNames));
+
+        return npcNames.Select(name => (name, exists: _textures.TryGetValue(name.ToLower(), out var texture), texture))
+            .Where(t => t.exists).ToDictionary(t => t.name.ToLower(), t => t.texture!);
+
+    }
 }

@@ -54,14 +54,18 @@ public class Player : IInput
                     Global.Instance.Director.DoAction(action);
                 }
             }
-
-            if (Global.Instance.Interactions.Query(walkInteraction.InteractionId, out var interaction))
+            if (walkInteraction.InteractionId.Count > 0)
             {
-                if (!walkInteraction.MultiUse)
+                var iid = walkInteraction.InteractionId[0];
+                walkInteraction.InteractionId.RemoveAt(0);
+                if (Global.Instance.Interactions.Query(iid, out var interaction))
                 {
-                    walkInteraction.Valid = false;
+                    if (!walkInteraction.MultiUse)
+                    {
+                        walkInteraction.Valid = false;
+                    }
+                    Global.Instance.Director.StartInteraction(interaction);
                 }
-                Global.Instance.Director.StartInteraction(interaction);
             }
         }
     }

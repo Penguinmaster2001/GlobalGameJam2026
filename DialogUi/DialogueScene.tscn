@@ -1,33 +1,23 @@
 [gd_scene format=3 uid="uid://d4iis4p3gd18d"]
 
 [ext_resource type="Script" uid="uid://csuxdfqsuffr7" path="res://DialogUi/dialogue_scene.gd" id="1_aay13"]
-[ext_resource type="PackedScene" path="res://Character.tscn" id="1_efucv"]
+[ext_resource type="PackedScene" uid="uid://bfhs1r85ao1va" path="res://DialogUi/Character.tscn" id="1_efucv"]
 [ext_resource type="PackedScene" uid="uid://drm3jv2qtud5h" path="res://DialogUi/dialogue_ui.tscn" id="2_aay13"]
 
-[node name="DialogUi" type="Node2D" unique_id=1037324033 node_paths=PackedStringArray("character_sprite", "dialog_ui")]
-script = ExtResource("1_aay13")
-character_sprite = NodePath("CanvasLayer2/Control/CharacterSprite")
-dialog_ui = NodePath("CanvasLayer2/Control/DialogueUI")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232658785]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2110130684]
-offset_right = 1156.0
-offset_bottom = 665.0
-color = Color(0.9529412, 0.19215687, 0.3019608, 0)
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=595560105]
-
-[node name="Control" type="Control" parent="CanvasLayer2" unique_id=1392337920]
+[node name="Dialog" type="Control" unique_id=486259032 node_paths=PackedStringArray("character_sprite", "dialog_ui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aay13")
+character_sprite = NodePath("CharacterSprite")
+dialog_ui = NodePath("DialogueUI")
 
-[node name="CharacterSprite" parent="CanvasLayer2/Control" unique_id=955065750 instance=ExtResource("1_efucv")]
+[node name="CharacterSprite" parent="." unique_id=955065750 instance=ExtResource("1_efucv")]
 unique_name_in_owner = true
+layout_mode = 1
 
-[node name="DialogueUI" parent="CanvasLayer2/Control" unique_id=1722072264 instance=ExtResource("2_aay13")]
+[node name="DialogueUI" parent="." unique_id=1722072264 instance=ExtResource("2_aay13")]
 layout_mode = 1
