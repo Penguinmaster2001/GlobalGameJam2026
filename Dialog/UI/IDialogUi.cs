@@ -12,8 +12,16 @@ public interface IDialogUi
     event Action? DialogFinished;
 
 
+
+    event Action<Response>? ChoseResponse;
+
+
     
-    public void Show(DialogInfo dialog, InteractionDirector director);
+    public void ShowDialog(DialogInfo dialog);
+
+
+
+    void ShowResponses(DialogInfo dialog);
 
 
 

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using Godot;
 using Interactions;
@@ -15,13 +16,32 @@ public partial class ChoicesContainer : Control
 
 
 
+    public event Action<Response>? ChoseResponse = null;
+
+
+
     private readonly List<Button> _currentButtons = [];
 
 
 
-    public void Show(List<Response> responses, InteractionDirector director)
+    public void Show(List<Response> responses)
     {
-        GD.Print("Show responses");
+        foreach (var response in responses)
+        {
+            var button = OptionButtonScene.Instantiate<Button>();
+            button.Text = response.Text[0];
+            button.ButtonUp += () => ChoseResponse?.Invoke(response);
+            _currentButtons.Add(button);
+            OptionBox.CallDeferred("add_child", button);
+        }
+        OptionBox.CallDeferred("show");
+    }
+
+
+
+    public void RemoveResponses()
+    {
+        OptionBox.Visible = false;
         foreach (var button in _currentButtons)
         {
             button.Visible = false;
@@ -29,14 +49,5 @@ public partial class ChoicesContainer : Control
             button.QueueFree();
         }
         _currentButtons.Clear();
-
-        foreach (var response in responses)
-        {
-            var button = OptionButtonScene.Instantiate<Button>();
-            button.Text = response.Text[0];
-            button.ButtonUp += () => { GD.Print("hello"); director.ChoseResponse(response); };
-            _currentButtons.Add(button);
-            OptionBox.CallDeferred("add_child", button);
-        }
     }
 }

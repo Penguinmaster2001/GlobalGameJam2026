@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://cdwlpe1a3dcqn" path="res://Resources/Textures/Masks/mask_1.png" id="26_my276"]
 [ext_resource type="Texture2D" uid="uid://bkhlasuvsiwa3" path="res://Resources/Textures/Masks/mask_3.png" id="26_o3ebs"]
 [ext_resource type="Texture2D" uid="uid://ruds2p7xr6rj" path="res://Resources/Textures/Npcs/background.png" id="27_yx0jh"]
-[ext_resource type="AudioStream" uid="uid://b6wghxfbcd286" path="res://Resources/Audio/game jam music.wav" id="29_k83mh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_036b0"]
 texture = ExtResource("4_aqk2v")
@@ -307,6 +306,10 @@ texture_region_size = Vector2i(256, 256)
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_aqk2v"]
 tile_size = Vector2i(256, 256)
@@ -698,9 +701,6 @@ scale = Vector2(0.2902098, 0.26536313)
 texture = ExtResource("22_gggvi")
 
 [node name="music" type="AudioStreamPlayer2D" parent="." unique_id=1593059660]
-stream = ExtResource("29_k83mh")
-volume_db = -40.615
-autoplay = true
 
 [editable path="CanvasLayer/DialogUiWrapper/Dialog"]
 [editable path="CanvasLayer/DialogUiWrapper/Dialog/DialogueUI"]

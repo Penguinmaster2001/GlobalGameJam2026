@@ -18,12 +18,16 @@ public class InteractionDirector
     private readonly Player _player;
     private readonly Dictionary<DialogActionTypes, Action<string>> _dialogActionHandlers;
     private Interaction? _currentInteraction = null;
+    private DialogInfo? _currentDialog = null;
 
 
 
     public InteractionDirector(IDialogUi dialogUi, NpcTextureDatabase npcTextureDatabase, Player player)
     {
         _dialogUi = dialogUi;
+        _dialogUi.ChoseResponse += OnChoseResponse;
+        _dialogUi.DialogFinished += OnDialogFinished;
+
         _npcTextureDatabase = npcTextureDatabase;
         _player = player;
 
@@ -32,15 +36,24 @@ public class InteractionDirector
             {DialogActionTypes.ChangeSuspicion, i => _player.SuspicionLevel += int.Parse(i) },
             {DialogActionTypes.GiveMask, i => {_player.GiveMask(int.Parse(i)); Global.Instance.MaskUi.EnableMask(int.Parse(i)); } },
             {DialogActionTypes.SetObjective, i => Global.Instance.ObjectiveManager.CurrentObjective = i },
-            {DialogActionTypes.TriggerEvent, i => Global.Instance.Jumpscare.Visible = true },
         };
+    }
+
+
+
+    private void OnDialogFinished()
+    {
+        if (_currentDialog is DialogInfo dialogInfo)
+        {
+            _dialogUi.ShowResponses(dialogInfo);
+        }
     }
 
 
 
     public void DoAction(DialogAction dialogAction)
     {
-        _dialogActionHandlers[dialogAction.ActionType](dialogAction.Value);
+        _dialogActionHandlers.GetValueOrDefault(dialogAction.ActionType, (s) => GD.Print($"No action set. Value: {s}"))(dialogAction.Value);
     }
 
 
@@ -53,7 +66,7 @@ public class InteractionDirector
 
 
 
-    public void ChoseResponse(Response response)
+    public void OnChoseResponse(Response response)
     {
         if (_currentInteraction is Interaction interaction)
         {
@@ -78,8 +91,9 @@ public class InteractionDirector
             GD.Print($"{action.ActionType}, {action.Value}");
             DoAction(action);
         }
-        var info = AssembleDialogInfo(interaction, dialogId);
-        _dialogUi.Show(info, this);
+        var dialogInfo = AssembleDialogInfo(interaction, dialogId);
+        _currentDialog = dialogInfo;
+        _dialogUi.ShowDialog(_currentDialog);
     }
 
 
@@ -100,9 +114,4 @@ public class InteractionDirector
     private List<Response> FilterResponses(IEnumerable<Response> responses)
         => [.. responses.Where(r => r.RequiredMasks.Contains(_player.CurrentMask.Level)
             && r.SuspicionThreshold >= _player.SuspicionLevel)];
-
-
-
-    private string[] AppendCharacterName(IEnumerable<string> text, string name)
-        => [.. text.Select(t => t.StartsWith($"{name.ToLower()}:") ? t : $"{name.ToLower()}: {t}")];
 }

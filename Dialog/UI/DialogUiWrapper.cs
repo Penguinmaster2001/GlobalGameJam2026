@@ -24,19 +24,32 @@ public partial class DialogUiWrapper : Control, IDialogUi
 
 
 
+    public event Action<Response>? ChoseResponse = null;
+
+
+
     public override void _Ready()
     {
         Ui.Connect("dialogue_finished", Callable.From(OnDialogFinished));
+        Choices.ChoseResponse += (response) => ChoseResponse?.Invoke(response);
+        Choices.RemoveResponses();
         Ui.Visible = false;
     }
 
 
 
-    public void Show(DialogInfo dialog, InteractionDirector director)
+    public void ShowDialog(DialogInfo dialog)
     {
+        Choices.RemoveResponses();
         Ui.Call("start_dialogue", dialog.Text, dialog.CharacterTextures);
-        Choices.Show(dialog.Responses, director);
         Ui.Visible = true;
+    }
+
+
+
+    public void ShowResponses(DialogInfo dialog)
+    {
+        Choices.Show(dialog.Responses);
     }
 
 
@@ -44,8 +57,6 @@ public partial class DialogUiWrapper : Control, IDialogUi
     private void OnDialogFinished()
     {
         DialogFinished?.Invoke();
-        // Ui.Call("hide_children");
-        // GD.Print("dialog done");
     }
 
 
@@ -53,5 +64,6 @@ public partial class DialogUiWrapper : Control, IDialogUi
     public void End()
     {
         Ui.Visible = false;
+        Choices.RemoveResponses();
     }
 }
