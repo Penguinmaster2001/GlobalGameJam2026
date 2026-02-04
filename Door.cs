@@ -16,7 +16,7 @@ public partial class Door : StaticBody2D
 
             _open = value;
             Collision.Disabled = _open;
-            
+
             var newFrame = _open ? OpenFrame : ClosedFrame;
             foreach (var doorSprite in DoorSprites)
             {
@@ -28,14 +28,44 @@ public partial class Door : StaticBody2D
 
 
     [Export]
+    public string OpenDoorEvent = "open_doors";
+
+
+    [Export]
+    public string CloseDoorEvent = "close_doors";
+
+
+    [Export]
     public required CollisionPolygon2D Collision;
 
     [Export]
     public required Array<Sprite2D> DoorSprites;
-    
+
     [Export]
     public required int OpenFrame;
-    
+
     [Export]
     public required int ClosedFrame;
+
+
+
+
+    public override void _Ready()
+    {
+        Events.Subscribe("open_door", (v) =>
+        {
+            if (Events.EventStringComparer.Compare(v, OpenDoorEvent) == 0)
+            {
+                Open = true;
+            }
+        });
+
+        Events.Subscribe("close_door", (v) =>
+        {
+            if (Events.EventStringComparer.Compare(v, OpenDoorEvent) == 0)
+            {
+                Open = false;
+            }
+        });
+    }
 }

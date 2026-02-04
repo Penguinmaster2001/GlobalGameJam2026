@@ -55,6 +55,14 @@ public class InteractionDirector
                 DialogActionTypes.SetObjective,
                 i => Global.Instance.ObjectiveManager.CurrentObjective = i
             },
+            {
+                DialogActionTypes.TriggerEvent,
+                i =>
+                {
+                    var info = i.Split(':', 2);
+                    Events.Publish(info[0], info[1]);
+                }
+            }
         };
     }
 
@@ -83,13 +91,11 @@ public class InteractionDirector
 
 
 
-    public int TryInteractions(IEnumerable<int> interactionIds)
+    public int TryInteractions(ICollection<int> interactionIds, int start = 0)
     {
-        var i = 0;
-        foreach (var interactionId in interactionIds)
+        for (int i = 0; i < interactionIds.Count; i++)
         {
-            if (StartInteraction(interactionId)) return i;
-            i++;
+            if (StartInteraction(interactionIds.ElementAt((i + start) % interactionIds.Count))) return i;
         }
         return -1;
     }

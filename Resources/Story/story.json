@@ -566,8 +566,8 @@
 						"repetitions": 1
 					},
 					{
-						"action_type": "UnlockDoor",
-						"value": "main_hall_door",
+						"action_type": "TriggerEvent",
+						"value": "open_door: main_hall_door",
 						"repetitions": 1
 					}
 				]

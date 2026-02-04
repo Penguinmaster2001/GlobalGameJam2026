@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://eah0el3b2cab"]
 
-[ext_resource type="Script" uid="uid://dqb0yq24ij6l4" path="res://WalkInteraction.cs" id="1_g8hdd"]
+[ext_resource type="Script" uid="uid://dqb0yq24ij6l4" path="res://InteractionTrigger.cs" id="1_g8hdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gs4n"]
+size = Vector2(32, 32)
 
-[node name="WalkInteraction" type="Area2D" unique_id=1425110247 node_paths=PackedStringArray("_detectionArea")]
+[node name="InteractionTrigger" type="Area2D" unique_id=1425110247]
 script = ExtResource("1_g8hdd")
-_detectionArea = NodePath(".")
+Enabled = null
+Actions = null
+InteractionId = null
+CurrentInteraction = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=18782551]
 shape = SubResource("RectangleShape2D_4gs4n")

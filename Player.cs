@@ -7,7 +7,7 @@ using Godot;
 
 public class Player : IInput
 {
-    private WalkInteraction? _currentInteraction = null;
+    private InteractionTrigger? _currentInteraction = null;
 
     public Mask CurrentMask { get; set; } = Mask.Masks["none"];
     public List<Mask> PlayerMasks = [Mask.Masks["none"]];
@@ -37,7 +37,7 @@ public class Player : IInput
 
 
 
-    public void OnWalkInteraction(WalkInteraction walkInteraction)
+    public void OnInteraction(InteractionTrigger walkInteraction)
     {
         if (walkInteraction != _currentInteraction)
         {
@@ -46,7 +46,7 @@ public class Player : IInput
             {
                 Global.Instance.Director.DoAction(action);
             }
-            Global.Instance.Director.TryInteractions(_currentInteraction.InteractionId);
+            walkInteraction.CurrentInteraction = Global.Instance.Director.TryInteractions(_currentInteraction.InteractionId, walkInteraction.CurrentInteraction) + 1;
         }
     }
 
@@ -70,7 +70,7 @@ public class Player : IInput
 
 
 
-    internal void OnWalkLeave(WalkInteraction walkInteraction)
+    internal void OnColliderInteractionLeave(InteractionTrigger walkInteraction)
     {
         if (walkInteraction == _currentInteraction)
         {

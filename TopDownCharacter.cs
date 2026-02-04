@@ -37,7 +37,7 @@ public partial class TopDownCharacter : CharacterBody2D
 
 
 
-    private WalkInteraction? _currentInteraction = null;
+    private InteractionTrigger? _currentInteraction = null;
 
     public Mask CurrentMask { get; set; } = Mask.Masks["none"];
 
