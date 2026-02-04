@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://u85b3o766oh5"]
+
+[ext_resource type="Texture2D" uid="uid://jr35b4c7q0xq" path="res://Resources/Textures/Tiles/door.png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://ky2bhcxiqtsn" path="res://Door.cs" id="1_v6xrn"]
+
+[node name="Door" type="StaticBody2D" unique_id=1447508738 node_paths=PackedStringArray("Collision", "DoorSprites")]
+script = ExtResource("1_v6xrn")
+Collision = NodePath("Collision")
+DoorSprites = [NodePath("Left"), NodePath("Right")]
+OpenFrame = 1
+
+[node name="Left" type="Sprite2D" parent="." unique_id=1786616379]
+position = Vector2(-32, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_ba8gm")
+hframes = 2
+
+[node name="Right" type="Sprite2D" parent="." unique_id=690582805]
+position = Vector2(32, 0)
+rotation = -3.1415927
+scale = Vector2(0.125, -0.125)
+texture = ExtResource("1_ba8gm")
+hframes = 2
+
+[node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1269147000]
+polygon = PackedVector2Array(-64, -32, 64, -32, 64, -17, 0, -12, -64, -17)
