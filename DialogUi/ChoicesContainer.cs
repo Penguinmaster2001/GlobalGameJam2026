@@ -29,7 +29,7 @@ public partial class ChoicesContainer : Control
         foreach (var response in responses)
         {
             var button = OptionButtonScene.Instantiate<Button>();
-            button.Text = response.Text[0];
+            button.Text = response.Text;
             button.ButtonUp += () => ChoseResponse?.Invoke(response);
             _currentButtons.Add(button);
             OptionBox.CallDeferred("add_child", button);

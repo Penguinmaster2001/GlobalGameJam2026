@@ -12,20 +12,20 @@ namespace Interactions;
 
 public class NpcTextureDatabase
 {
-    private readonly Dictionary<string, Texture2D> _textures;
+    public readonly Dictionary<string, Texture2D> Textures;
 
 
 
     public NpcTextureDatabase(Dictionary<string, Texture2D> textures)
     {
-        _textures = textures;
+        Textures = textures;
     }
 
 
 
 
     public bool Query(string npc, [NotNullWhen(true)] out Texture2D? texture)
-        => _textures.TryGetValue(npc.ToLower(), out texture);
+        => Textures.TryGetValue(npc.ToLower(), out texture);
 
 
 
@@ -34,7 +34,7 @@ public class NpcTextureDatabase
     {
         GD.Print(string.Join(',', npcNames));
 
-        return npcNames.Select(name => (name, exists: _textures.TryGetValue(name.ToLower(), out var texture), texture))
+        return npcNames.Select(name => (name, exists: Textures.TryGetValue(name.ToLower(), out var texture), texture))
             .Where(t => t.exists).ToDictionary(t => t.name.ToLower(), t => t.texture!);
 
     }

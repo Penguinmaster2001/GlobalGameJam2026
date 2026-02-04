@@ -479,7 +479,6 @@ texture = ExtResource("16_o3ebs")
 [node name="WalkInteraction" parent="Level/Level2" unique_id=1519214299 instance=ExtResource("3_036b0")]
 position = Vector2(-9.303058, -39.164803)
 scale = Vector2(28.48, 28.48)
-InteractionId = Array[int]([9])
 
 [node name="PlayerCharacter" parent="." unique_id=1910870109 instance=ExtResource("10_ic0uy")]
 position = Vector2(-277, 1011)
@@ -605,8 +604,6 @@ InteractionId = Array[int]([14])
 [node name="WalkInteraction2" parent="Table3" unique_id=1239616712 instance=ExtResource("3_036b0")]
 position = Vector2(-1361.4004, 52.956104)
 scale = Vector2(28.48, 28.48)
-ActionTypes = Array[int]([5])
-ActionValues = Array[String]([""])
 
 [node name="Knife" type="Sprite2D" parent="." unique_id=912015958]
 position = Vector2(-131, -444)
@@ -647,8 +644,6 @@ texture = ExtResource("25_g1i3r")
 
 [node name="WalkInteraction2" parent="Mask2" unique_id=98239336 instance=ExtResource("3_036b0")]
 scale = Vector2(100, 97.788)
-ActionTypes = Array[int]([2])
-ActionValues = Array[String](["2"])
 
 [node name="Mask3" type="Sprite2D" parent="Mask2" unique_id=884672567]
 position = Vector2(-22656.035, 28734.89)
@@ -656,8 +651,6 @@ texture = ExtResource("26_o3ebs")
 
 [node name="WalkInteraction3" parent="Mask2/Mask3" unique_id=1156647020 instance=ExtResource("3_036b0")]
 scale = Vector2(99.99999, 97.787994)
-ActionTypes = Array[int]([2])
-ActionValues = Array[String](["3"])
 
 [node name="Mask1" type="Sprite2D" parent="." unique_id=430923544]
 position = Vector2(-222, 353)
@@ -666,8 +659,6 @@ texture = ExtResource("26_my276")
 
 [node name="WalkInteraction" parent="Mask1" unique_id=441751555 instance=ExtResource("3_036b0")]
 scale = Vector2(50, 50)
-ActionTypes = Array[int]([2])
-ActionValues = Array[String](["1"])
 
 [node name="Background" type="Sprite2D" parent="." unique_id=261205230]
 position = Vector2(-1222, 97)

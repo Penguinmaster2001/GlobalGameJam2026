@@ -9,27 +9,21 @@ using Interactions;
 public partial class WalkInteraction : Area2D
 {
     [Export]
-    public bool MultiUse = false;
+    public bool Enabled = true;
 
     [Export]
-    public bool Valid = true;
-
-    [Export]
-    public Array<DialogActionTypes> ActionTypes = [];
-
-    [Export]
-    public Array<string> ActionValues = [];
+    public Array<DialogActionResource> Actions = [];
 
     [Export]
     public Array<int> InteractionId = [];
 
-    public DialogAction[] DialogAction = [];
+    public DialogAction[] DialogActions = [];
 
 
 
     public override void _Ready()
     {
-        DialogAction = [.. ActionTypes.Zip(ActionValues).Select(v => new DialogAction() { ActionType = v.First, Value = v.Second })];
+        DialogActions = [.. Actions.Select(a => a.ToDialogAction())];
         BodyEntered += OnBodyEntered;
         BodyExited += OnBodyExit;
     }
@@ -38,7 +32,7 @@ public partial class WalkInteraction : Area2D
 
     private void OnBodyEntered(Node2D body)
     {
-        if (Valid && body == Global.Instance.PlayerBody)
+        if (Enabled && body == Global.Instance.PlayerBody)
         {
             Global.Instance.Player.OnWalkInteraction(this);
         }

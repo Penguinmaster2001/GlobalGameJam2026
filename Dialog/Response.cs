@@ -1,9 +1,4 @@
 
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
-
-
-
 namespace Interactions;
 
 
@@ -11,20 +6,21 @@ namespace Interactions;
 public class Response
 {
     public int ResponseId;
-    public int SuspicionThreshold;
-    public List<int> RequiredMasks;
-    public string[] Text;
+    public Requirements Requirements;
+    public string Text;
     public int NextDialogId;
 
 
 
-    [JsonConstructor]
-    public Response(int responseId, int suspicionThreshold, List<int> requiredMasks, string[] text, int nextDialogId)
+    public Response(int responseId, Requirements requirements, string text, int nextDialogId)
     {
         ResponseId = responseId;
-        SuspicionThreshold = suspicionThreshold;
-        RequiredMasks = requiredMasks;
+        Requirements = requirements;
         Text = text;
         NextDialogId = nextDialogId;
     }
+
+
+
+    public static Response Continue => new(-1, Requirements.None, "Continue.", -1);
 }
